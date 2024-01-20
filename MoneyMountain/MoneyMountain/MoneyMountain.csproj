@@ -54,7 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Question.cs" />
+    <Compile Include="QuestionForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionForm2.Designer.cs">
+      <DependentUpon>QuestionForm2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
