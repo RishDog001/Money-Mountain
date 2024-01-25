@@ -89,7 +89,7 @@ namespace MoneyMountain
             if (radioButtonOption1.Checked)
             {
                 earnings += 100;
-                MessageBox.Show($"Correct! You've won {earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
                 buttonNext.Visible = true;
@@ -105,7 +105,7 @@ namespace MoneyMountain
         private void EndGame()
         {
             gameOver = true;
-            MessageBox.Show($"Game over! Your Prize Money: {earnings}.\n Thank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
 
