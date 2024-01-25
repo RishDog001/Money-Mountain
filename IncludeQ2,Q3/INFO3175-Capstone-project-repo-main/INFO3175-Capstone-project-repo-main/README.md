@@ -1,0 +1,11 @@
+# Money Mountain
+Our capstone project is a quiz game with a built-in money transfer application. This project uses Windows Forms (C#) and MySQL for the database. The questions will be based on random topics, each in a separate form. The first question starts at $100 and increments each time the user answers the question correctly (Q2 - $200, Q3 - $300, Q4 - $500, etc.). But if the participant gets a question wrong, the game automatically ends, and if they get any of the 1st five questions wrong, they leave empty-handed. If they guess any of the following five questions incorrectly (6-10), they only get $1000. After the 10th question, the participant will walk away with only $32,000 if they guess the wrong answer to any of the remaining questions.
+
+The form controls are as follows: 
+•	Four radio buttons representing each answer choice.
+•	Two buttons representing lifelines in case the user gets stuck on a question and two more buttons (1 button gets enabled when the user answers a question correctly. Once clicked, it navigates to the next question. The other button lets the user quit the game if they don’t know the answer to a question and uses up both lifelines – note that the quit button only gets enabled if the two lifeline buttons become disabled).
+•	Label to display the question on the form.
+•	Timer: The 1st five questions will have a timer counting down from 45 seconds, and then the following five questions will have a timer counting down from 60 seconds (if the user fails to answer any question within the time limit, they automatically get disqualified). 
+•	Message box (aka pop-up alert) to display confirmation/status messages and validation error messages for the login/registration pages leading to the money transfer page.
+
+If the user quits the game or if the game ends because of an incorrect answer, the program will switch to the money transfer page, where we input the account no, name of the user, and the amount to be transferred. All user information will be stored inside a MySQL database. 
