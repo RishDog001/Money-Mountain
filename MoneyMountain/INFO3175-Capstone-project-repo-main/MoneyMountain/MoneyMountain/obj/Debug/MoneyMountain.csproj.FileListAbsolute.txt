@@ -1,0 +1,10 @@
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\bin\Debug\MoneyMountain.exe.config
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\bin\Debug\MoneyMountain.exe
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\bin\Debug\MoneyMountain.pdb
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.csproj.AssemblyReference.cache
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm1.resources
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.Properties.Resources.resources
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.csproj.GenerateResource.cache
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.csproj.CoreCompileInputs.cache
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.exe
+C:\Users\sures\Desktop\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.pdb
