@@ -53,15 +53,6 @@ namespace MoneyMountain
             radioButtonOption2.Text = answerList[questionIndex][1];
             radioButtonOption3.Text = answerList[questionIndex][2];
             radioButtonOption4.Text = answerList[questionIndex][3];
-
-            groupBoxLifelines.Enabled = true;
-
-            radioButtonOption1.Checked = false;
-            radioButtonOption2.Checked = false;
-            radioButtonOption3.Checked = false;
-            radioButtonOption4.Checked = false;
-
-            questionIndex = 0;
         }
 
         private void InitializeGame()
@@ -75,12 +66,20 @@ namespace MoneyMountain
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at the start
             buttonQuit.Enabled = false;
-
+            
             buttonNext.Visible = false; //Hiding the next question button
 
             buttonLifeline1.Enabled = true; //Enabling the lifeline buttons at the start
             buttonLifeline2.Enabled = true;
 
+            groupBoxLifelines.Enabled = true;
+
+            radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
+            radioButtonOption2.Checked = false;
+            radioButtonOption3.Checked = false;
+            radioButtonOption4.Checked = false;
+
+            questionIndex = 0;
             DisplayQuestion();
         }
 
@@ -127,11 +126,11 @@ namespace MoneyMountain
         private void DisplayChoices(List<int> choices)
         {
             //Display the choices in the listbox
-            listBoxChoices.Items.Clear();
+            listBoxResults.Items.Clear();
             
             for (int i = 0; i < choices.Count; i++)
             {
-                listBoxChoices.Items.Add($"Option: {i + 1}: {choices[i]} votes");
+                listBoxResults.Items.Add($"Option: {i + 1}: {choices[i]} votes");
             }
         }
 
@@ -206,11 +205,7 @@ namespace MoneyMountain
 
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -243,11 +238,7 @@ namespace MoneyMountain
 
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -274,15 +265,11 @@ namespace MoneyMountain
                     else
                     {
                         questionTimer.Stop();
-                        listBoxChoices.Items.Clear();
+                        listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -307,11 +294,7 @@ namespace MoneyMountain
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 

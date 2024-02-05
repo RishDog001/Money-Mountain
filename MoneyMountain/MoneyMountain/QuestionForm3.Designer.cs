@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.timerLabel = new System.Windows.Forms.Label();
             this.questionLabel = new System.Windows.Forms.Label();
-            this.listBoxChoices = new System.Windows.Forms.ListBox();
+            this.listBoxResults = new System.Windows.Forms.ListBox();
             this.buttonNext = new System.Windows.Forms.Button();
             this.groupBoxOptions = new System.Windows.Forms.GroupBox();
             this.radioButtonOption4 = new System.Windows.Forms.RadioButton();
@@ -71,14 +71,14 @@
             this.questionLabel.TabIndex = 26;
             this.questionLabel.Text = "label1";
             // 
-            // listBoxChoices
+            // listBoxResults
             // 
-            this.listBoxChoices.FormattingEnabled = true;
-            this.listBoxChoices.ItemHeight = 16;
-            this.listBoxChoices.Location = new System.Drawing.Point(525, 181);
-            this.listBoxChoices.Name = "listBoxChoices";
-            this.listBoxChoices.Size = new System.Drawing.Size(247, 84);
-            this.listBoxChoices.TabIndex = 25;
+            this.listBoxResults.FormattingEnabled = true;
+            this.listBoxResults.ItemHeight = 16;
+            this.listBoxResults.Location = new System.Drawing.Point(525, 181);
+            this.listBoxResults.Name = "listBoxResults";
+            this.listBoxResults.Size = new System.Drawing.Size(247, 84);
+            this.listBoxResults.TabIndex = 25;
             // 
             // buttonNext
             // 
@@ -232,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(784, 367);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.questionLabel);
-            this.Controls.Add(this.listBoxChoices);
+            this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.groupBoxOptions);
             this.Controls.Add(this.buttonQuit);
@@ -253,7 +253,7 @@
 
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Label questionLabel;
-        private System.Windows.Forms.ListBox listBoxChoices;
+        private System.Windows.Forms.ListBox listBoxResults;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.GroupBox groupBoxOptions;
         private System.Windows.Forms.RadioButton radioButtonOption4;

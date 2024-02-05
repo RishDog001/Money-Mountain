@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.listBoxChoices = new System.Windows.Forms.ListBox();
+            this.listBoxResults = new System.Windows.Forms.ListBox();
             this.buttonNext = new System.Windows.Forms.Button();
             this.groupBoxOptions = new System.Windows.Forms.GroupBox();
             this.radioButtonOption4 = new System.Windows.Forms.RadioButton();
@@ -48,14 +48,14 @@
             this.groupBoxLifelines.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBoxChoices
+            // listBoxResults
             // 
-            this.listBoxChoices.FormattingEnabled = true;
-            this.listBoxChoices.ItemHeight = 16;
-            this.listBoxChoices.Location = new System.Drawing.Point(557, 163);
-            this.listBoxChoices.Name = "listBoxChoices";
-            this.listBoxChoices.Size = new System.Drawing.Size(247, 84);
-            this.listBoxChoices.TabIndex = 17;
+            this.listBoxResults.FormattingEnabled = true;
+            this.listBoxResults.ItemHeight = 16;
+            this.listBoxResults.Location = new System.Drawing.Point(557, 163);
+            this.listBoxResults.Name = "listBoxResults";
+            this.listBoxResults.Size = new System.Drawing.Size(247, 84);
+            this.listBoxResults.TabIndex = 17;
             // 
             // buttonNext
             // 
@@ -232,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(822, 347);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.questionLabel);
-            this.Controls.Add(this.listBoxChoices);
+            this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.groupBoxOptions);
             this.Controls.Add(this.buttonQuit);
@@ -251,7 +251,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxChoices;
+        private System.Windows.Forms.ListBox listBoxResults;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.GroupBox groupBoxOptions;
         private System.Windows.Forms.RadioButton radioButtonOption4;

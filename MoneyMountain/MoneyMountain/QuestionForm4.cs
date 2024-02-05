@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
@@ -22,8 +18,8 @@ namespace MoneyMountain
         public QuestionForm4()
         {
             InitializeComponent();
-            InitializeGame(); //User-defined method to initailize the game settings
-            DisplayQuestion(); //User-defined method to display the question and answers
+            InitializeGame();
+            DisplayQuestion();
         }
 
         private void questionTimer_Tick(object sender, EventArgs e)
@@ -57,25 +53,15 @@ namespace MoneyMountain
             radioButtonOption2.Text = answerList[questionIndex][1];
             radioButtonOption3.Text = answerList[questionIndex][2];
             radioButtonOption4.Text = answerList[questionIndex][3];
-
-            groupBoxLifelines.Enabled = true;
-
-            radioButtonOption1.Checked = false;
-            radioButtonOption2.Checked = false;
-            radioButtonOption3.Checked = false;
-            radioButtonOption4.Checked = false;
-
-            questionIndex = 0;
         }
 
         private void InitializeGame()
         {
-            earnings = 300;
+            earnings = 300; //Carry over value from previous question
 
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
-            earnings = 0; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
 
@@ -87,6 +73,14 @@ namespace MoneyMountain
             buttonLifeline1.Enabled = true; //Enabling the lifeline buttons at the start
             buttonLifeline2.Enabled = true;
 
+            groupBoxLifelines.Enabled = true;
+
+            radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
+            radioButtonOption2.Checked = false;
+            radioButtonOption3.Checked = false;
+            radioButtonOption4.Checked = false;
+
+            questionIndex = 0;
             DisplayQuestion();
         }
 
@@ -94,7 +88,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption3.Checked)
             {
-                earnings += 500;
+                earnings += 200;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -103,6 +97,7 @@ namespace MoneyMountain
 
             else
             {
+                earnings = 0;
                 MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
@@ -133,10 +128,10 @@ namespace MoneyMountain
         private void DisplayChoices(List<int> choices)
         {
             //Display the choices in the listbox
-            listBoxChoices.Items.Clear();
+            listBoxResults.Items.Clear();
             for (int i = 0; i < choices.Count; i++)
             {
-                listBoxChoices.Items.Add($"Option: {i + 1}: {choices[i]} votes");
+                listBoxResults.Items.Add($"Option: {i + 1}: {choices[i]} votes");
             }
         }
 
@@ -207,11 +202,7 @@ namespace MoneyMountain
 
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -244,11 +235,7 @@ namespace MoneyMountain
 
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -275,15 +262,11 @@ namespace MoneyMountain
                     else
                     {
                         questionTimer.Stop();
-                        listBoxChoices.Items.Clear();
+                        listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -308,11 +291,7 @@ namespace MoneyMountain
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
                         questionTimer.Start();
-
-                        if (!buttonLifeline1.Enabled || !buttonLifeline2.Enabled)
-                        {
-                            buttonQuit.Enabled = true;
-                        }
+                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -345,7 +324,17 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm5 questionForm5 = new QuestionForm5();
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm5.Show();
+            }
 
+            else
+            {
+                return;
+            }
         }
     }
 }

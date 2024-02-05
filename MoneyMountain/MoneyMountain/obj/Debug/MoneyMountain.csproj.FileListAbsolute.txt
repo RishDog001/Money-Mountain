@@ -34,3 +34,17 @@ C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-Include_Q2-Q3\IncludeQ2,Q3
 C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-Include_Q2-Q3\IncludeQ2,Q3\INFO3175-Capstone-project-repo-main\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.exe
 C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-Include_Q2-Q3\IncludeQ2,Q3\INFO3175-Capstone-project-repo-main\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.pdb
 C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-Include_Q2-Q3\IncludeQ2,Q3\INFO3175-Capstone-project-repo-main\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm4.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\bin\Debug\MoneyMountain.exe.config
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\bin\Debug\MoneyMountain.exe
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\bin\Debug\MoneyMountain.pdb
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.csproj.AssemblyReference.cache
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm1.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.Properties.Resources.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm2.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm3.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm4.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.csproj.GenerateResource.cache
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.csproj.CoreCompileInputs.cache
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.exe
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.pdb
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm5.resources

@@ -43,7 +43,7 @@
             this.radioButtonOption1 = new System.Windows.Forms.RadioButton();
             this.buttonNext = new System.Windows.Forms.Button();
             this.timerLabel = new System.Windows.Forms.Label();
-            this.listBoxChoices = new System.Windows.Forms.ListBox();
+            this.listBoxResults = new System.Windows.Forms.ListBox();
             this.groupBoxLifelines.SuspendLayout();
             this.groupBoxOptions.SuspendLayout();
             this.SuspendLayout();
@@ -220,21 +220,21 @@
             this.timerLabel.TabIndex = 10;
             this.timerLabel.Text = "label1";
             // 
-            // listBoxChoices
+            // listBoxResults
             // 
-            this.listBoxChoices.FormattingEnabled = true;
-            this.listBoxChoices.ItemHeight = 16;
-            this.listBoxChoices.Location = new System.Drawing.Point(529, 146);
-            this.listBoxChoices.Name = "listBoxChoices";
-            this.listBoxChoices.Size = new System.Drawing.Size(247, 84);
-            this.listBoxChoices.TabIndex = 11;
+            this.listBoxResults.FormattingEnabled = true;
+            this.listBoxResults.ItemHeight = 16;
+            this.listBoxResults.Location = new System.Drawing.Point(529, 146);
+            this.listBoxResults.Name = "listBoxResults";
+            this.listBoxResults.Size = new System.Drawing.Size(247, 84);
+            this.listBoxResults.TabIndex = 11;
             // 
             // QuestionForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 326);
-            this.Controls.Add(this.listBoxChoices);
+            this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.groupBoxOptions);
@@ -268,7 +268,7 @@
         private System.Windows.Forms.RadioButton radioButtonOption1;
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Label timerLabel;
-        private System.Windows.Forms.ListBox listBoxChoices;
+        private System.Windows.Forms.ListBox listBoxResults;
     }
 }
 
