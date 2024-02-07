@@ -48,3 +48,4 @@ C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMo
 C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.exe
 C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.pdb
 C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm5.resources
+C:\Users\sures\Desktop\INFO3175-Capstone-project-repo-main\MoneyMountain\MoneyMountain\obj\Debug\MoneyMountain.QuestionForm6.resources

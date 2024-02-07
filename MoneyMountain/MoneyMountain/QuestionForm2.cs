@@ -23,7 +23,7 @@ namespace MoneyMountain
             DisplayQuestion(); //User-defined method to display the question and answers
         }
 
-        private void questionTimer1_Tick(object sender, EventArgs e)
+        private void questionTimer_Tick(object sender, EventArgs e)
         {
             time--; //Counting down by 1 second
             timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
@@ -46,7 +46,7 @@ namespace MoneyMountain
 
             answerList = new List<string[]>
             {
-                new string[] { "A:  Jane Austen", "B: Charles Dickens", "C: Mark Twain", "D: William Shakespeare" }
+                new string[] { "A: Jane Austen", "B: Charles Dickens", "C: Mark Twain", "D: William Shakespeare" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -62,18 +62,15 @@ namespace MoneyMountain
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
-            questionTimer.Tick += questionTimer1_Tick;
+            questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
 
-            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at the start
+            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
 
             buttonNext.Visible = false; //Hiding the next question button
 
-            buttonLifeline1.Enabled = true; //Enabling the lifeline buttons at the start
-            buttonLifeline2.Enabled = true;
-
-            groupBoxLifelines.Enabled = true;
+            groupBoxLifelines.Enabled = true; //Enabling the lifeline buttons inside the groupbox at runtime
 
             radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
             radioButtonOption2.Checked = false;
@@ -199,6 +196,7 @@ namespace MoneyMountain
 
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                questionTimer.Stop();
                 EndGame();
             }
 

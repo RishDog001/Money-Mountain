@@ -57,22 +57,19 @@ namespace MoneyMountain
 
         private void InitializeGame()
         {
+            earnings = 0;
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
-            earnings = 0; //Default initial value
             questionTimer.Tick += questionTimer1_Tick;
             questionTimer.Start(); //Start the timer
 
-            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at the start
+            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
-            
+
             buttonNext.Visible = false; //Hiding the next question button
 
-            buttonLifeline1.Enabled = true; //Enabling the lifeline buttons at the start
-            buttonLifeline2.Enabled = true;
-
-            groupBoxLifelines.Enabled = true;
+            groupBoxLifelines.Enabled = true; //Enabling the lifeline buttons inside the groupbox at runtime
 
             radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
             radioButtonOption2.Checked = false;
@@ -171,6 +168,7 @@ namespace MoneyMountain
 
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                questionTimer.Stop();
                 EndGame();
             }
 

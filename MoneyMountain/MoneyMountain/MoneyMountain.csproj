@@ -78,6 +78,12 @@
     <Compile Include="QuestionForm5.Designer.cs">
       <DependentUpon>QuestionForm5.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuestionForm6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionForm6.Designer.cs">
+      <DependentUpon>QuestionForm6.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QuestionForm1.resx">
       <DependentUpon>QuestionForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuestionForm2.resx">
       <DependentUpon>QuestionForm2.cs</DependentUpon>
@@ -102,6 +109,9 @@
     <EmbeddedResource Include="QuestionForm5.resx">
       <DependentUpon>QuestionForm5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuestionForm6.resx">
+      <DependentUpon>QuestionForm6.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aircanada_logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
 {
-    public partial class QuestionForm4 : Form
+    public partial class QuestionForm6 : Form
     {
         private int time; //Time in seconds
         private int questionIndex; //Current question index
@@ -15,7 +19,7 @@ namespace MoneyMountain
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
-        public QuestionForm4()
+        public QuestionForm6()
         {
             InitializeComponent();
             InitializeGame();
@@ -40,12 +44,12 @@ namespace MoneyMountain
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "Which country consumes the most chocolate per capita?"
+                "Which airline company does this logo represent?"
             };
 
             answerList = new List<string[]>
             {
-                new string[] { "A: Russia", "B: Germany", "C: Switzerland", "D: Netherlands" }
+                new string[] { "A: WestJet", "B: Turkish Airlines", "C: Air Canada", "D: Qantas Airlines" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -57,9 +61,10 @@ namespace MoneyMountain
 
         private void InitializeGame()
         {
-            earnings = 300; //Carry over value from previous question
+            earnings = 1000; //Carry over value from previous question
+            pictureBox1.Image = Properties.Resources.aircanada_logo;
             questionTimer.Interval = 1000; //Time interval in milliseconds
-            time = 45; //Initializing the timer to 45 seconds
+            time = 60; //Initializing the timer to 60 seconds
             gameOver = false; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
@@ -84,7 +89,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption3.Checked)
             {
-                earnings += 200;
+                earnings += 1000;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -93,7 +98,6 @@ namespace MoneyMountain
 
             else
             {
-                earnings = 0;
                 MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
@@ -299,6 +303,11 @@ namespace MoneyMountain
             }
         }
 
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption1.Checked;
@@ -317,21 +326,6 @@ namespace MoneyMountain
         private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption4.Checked;
-        }
-
-        private void buttonNext_Click(object sender, EventArgs e)
-        {
-            QuestionForm5 questionForm5 = new QuestionForm5();
-            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Hide();
-                questionForm5.Show();
-            }
-
-            else
-            {
-                return;
-            }
         }
     }
 }

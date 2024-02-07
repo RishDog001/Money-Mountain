@@ -58,22 +58,18 @@ namespace MoneyMountain
         private void InitializeGame()
         {
             earnings = 500; //Carry over value from previous question
-
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
 
-            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at the start
+            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
 
             buttonNext.Visible = false; //Hiding the next question button
 
-            buttonLifeline1.Enabled = true; //Enabling the lifeline buttons at the start
-            buttonLifeline2.Enabled = true;
-
-            groupBoxLifelines.Enabled = true;
+            groupBoxLifelines.Enabled = true; //Enabling the lifeline buttons inside the groupbox at runtime
 
             radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
             radioButtonOption2.Checked = false;
@@ -305,7 +301,18 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm6 questionForm6 = new QuestionForm6();
 
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm6.Show();
+            }
+
+            else
+            {
+                return;
+            }
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
