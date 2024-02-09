@@ -84,7 +84,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption2.Checked)
             {
-                earnings += 500;
+                earnings *= 2;
                 MessageBox.Show($"Correct! You've won ${earnings}. You've cleared the first stage!", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -112,10 +112,22 @@ namespace MoneyMountain
             Random random = new Random();
             List<int> choices = new List<int>();
 
-            for (int i = 0; i < 4; i++)
+            if (buttonLifeline2.Enabled)
             {
-                int choice = (i == 0) ? 1 : random.Next(1, 5);
-                choices.Add(choice);
+                for (int i = 0; i < 4; i++)
+                {
+                    int choice = (i == 0) ? 1 : random.Next(1, 5);
+                    choices.Add(choice);
+                }
+            }
+
+            else
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    int choice = (i == 0) ? 1 : random.Next(1, 3);
+                    choices.Add(choice);
+                }
             }
 
             return choices;
@@ -136,8 +148,6 @@ namespace MoneyMountain
         {
             //Randomize the answer choices
             var choices = answerList.OrderBy(i => Guid.NewGuid()).ToList();
-
-            //Keep only the 1st 2 choices
             choices = choices.Take(2).ToList();
 
             radioButtonOption3.Enabled = false;

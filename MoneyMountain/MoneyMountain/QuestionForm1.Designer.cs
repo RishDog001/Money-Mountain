@@ -50,7 +50,7 @@
             // 
             // questionTimer
             // 
-            this.questionTimer.Tick += new System.EventHandler(this.questionTimer1_Tick);
+            this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
             // 
             // buttonLifeline1
             // 

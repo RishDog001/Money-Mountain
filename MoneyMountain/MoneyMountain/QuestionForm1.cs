@@ -22,7 +22,7 @@ namespace MoneyMountain
             DisplayQuestion(); //User-defined method to display the question and answers
         }
 
-        private void questionTimer1_Tick(object sender, EventArgs e)
+        private void questionTimer_Tick(object sender, EventArgs e)
         {
             time--; //Counting down by 1 second
             timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
@@ -61,7 +61,7 @@ namespace MoneyMountain
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
-            questionTimer.Tick += questionTimer1_Tick;
+            questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
@@ -111,10 +111,22 @@ namespace MoneyMountain
             Random random = new Random();
             List<int> choices = new List<int>();
 
-            for (int i = 0; i < 4; i++)
+            if (buttonLifeline2.Enabled)
             {
-                int choice = (i == 0) ? 1 : random.Next(1, 5);
-                choices.Add(choice);
+                for (int i = 0; i < 4; i++)
+                {
+                    int choice = (i == 0) ? 1 : random.Next(1, 5);
+                    choices.Add(choice);
+                }
+            }
+
+            else
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    int choice = (i == 0) ? 1 : random.Next(1, 3);
+                    choices.Add(choice);
+                }
             }
 
             return choices;
@@ -135,8 +147,6 @@ namespace MoneyMountain
         {
             //Randomize the answer choices
             var choices = answerList.OrderBy(i => Guid.NewGuid()).ToList();
-
-            //Keep only the 1st 2 choices
             choices = choices.Take(2).ToList();
 
             radioButtonOption3.Enabled = false;

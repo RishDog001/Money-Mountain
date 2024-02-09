@@ -89,7 +89,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption3.Checked)
             {
-                earnings += 1000;
+                earnings *= 2;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -116,10 +116,22 @@ namespace MoneyMountain
             Random random = new Random();
             List<int> choices = new List<int>();
 
-            for (int i = 0; i < 4; i++)
+            if (buttonLifeline2.Enabled)
             {
-                int choice = (i == 0) ? 1 : random.Next(1, 5);
-                choices.Add(choice);
+                for (int i = 0; i < 4; i++)
+                {
+                    int choice = (i == 0) ? 1 : random.Next(1, 5);
+                    choices.Add(choice);
+                }
+            }
+
+            else
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    int choice = (i == 0) ? 1 : random.Next(1, 3);
+                    choices.Add(choice);
+                }
             }
 
             return choices;
@@ -139,8 +151,6 @@ namespace MoneyMountain
         {
             //Randomize the answer choices
             var choices = answerList.OrderBy(i => Guid.NewGuid()).ToList();
-
-            //Keep only the 1st 2 choices
             choices = choices.Take(2).ToList();
 
             radioButtonOption1.Enabled = false;
@@ -305,7 +315,18 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm7 questionForm7 = new QuestionForm7();
 
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm7.Show();
+            }
+
+            else
+            {
+                return;
+            }
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
