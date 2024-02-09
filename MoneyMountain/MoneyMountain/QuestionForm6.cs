@@ -305,7 +305,18 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm7 questionForm7 = new QuestionForm7();
 
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm7.Show();
+            }
+
+            else
+            {
+                return;
+            }
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
@@ -326,6 +337,11 @@ namespace MoneyMountain
         private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption4.Checked;
+        }
+
+        private void QuestionForm6_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
