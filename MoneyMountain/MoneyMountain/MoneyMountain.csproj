@@ -54,6 +54,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestionForm10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionForm10.Designer.cs">
+      <DependentUpon>QuestionForm10.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuestionForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,24 @@
     <Compile Include="QuestionForm7.Designer.cs">
       <DependentUpon>QuestionForm7.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuestionForm8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionForm8.Designer.cs">
+      <DependentUpon>QuestionForm8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionForm9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionForm9.Designer.cs">
+      <DependentUpon>QuestionForm9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TitleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TitleForm.Designer.cs">
+      <DependentUpon>TitleForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="QuestionForm1.resx">
       <DependentUpon>QuestionForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +127,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="QuestionForm10.resx">
+      <DependentUpon>QuestionForm10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuestionForm2.resx">
       <DependentUpon>QuestionForm2.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +148,15 @@
     <EmbeddedResource Include="QuestionForm7.resx">
       <DependentUpon>QuestionForm7.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuestionForm8.resx">
+      <DependentUpon>QuestionForm8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionForm9.resx">
+      <DependentUpon>QuestionForm9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TitleForm.resx">
+      <DependentUpon>TitleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\aircanada_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\lightbulb.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

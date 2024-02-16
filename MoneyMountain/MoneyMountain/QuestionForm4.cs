@@ -125,7 +125,7 @@ namespace MoneyMountain
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    int choice = (i == 0) ? 1 : random.Next(1, 3);
+                    int choice = (i == 0) ? 1 : random.Next(1, 5);
                     choices.Add(choice);
                 }
             }
@@ -145,10 +145,6 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
-            //Randomize the answer choices
-            var choices = answerList.OrderBy(i => Guid.NewGuid()).ToList();
-            choices = choices.Take(2).ToList();
-
             radioButtonOption1.Enabled = false;
             radioButtonOption4.Enabled = false;
         }
@@ -188,8 +184,6 @@ namespace MoneyMountain
         {
             if (!buttonLifeline2.Enabled)
             {
-                //MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
@@ -221,8 +215,6 @@ namespace MoneyMountain
 
             else
             {
-                //MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
@@ -257,8 +249,6 @@ namespace MoneyMountain
         {
             if (!buttonLifeline1.Enabled)
             {
-                //MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)

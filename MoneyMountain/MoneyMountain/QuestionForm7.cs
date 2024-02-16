@@ -129,7 +129,7 @@ namespace MoneyMountain
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    int choice = (i == 0) ? 1 : random.Next(1, 3);
+                    int choice = (i == 0) ? 1 : random.Next(1, 5);
                     choices.Add(choice);
                 }
             }
@@ -149,10 +149,6 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
-            //Randomize the answer choices
-            var choices = answerList.OrderBy(i => Guid.NewGuid()).ToList();
-            choices = choices.Take(2).ToList();
-
             radioButtonOption2.Enabled = false;
             radioButtonOption4.Enabled = false;
         }
@@ -315,7 +311,18 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm8 questionForm8 = new QuestionForm8();
+            
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm8.Show();
+            }
 
+            else
+            {
+                return;
+            }
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)

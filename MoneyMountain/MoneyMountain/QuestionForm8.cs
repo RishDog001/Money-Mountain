@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
 {
-    public partial class QuestionForm2 : Form
+    public partial class QuestionForm8 : Form
     {
         private int time; //Time in seconds
         private int questionIndex; //Current question index
@@ -16,11 +19,11 @@ namespace MoneyMountain
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
-        public QuestionForm2()
+        public QuestionForm8()
         {
             InitializeComponent();
-            InitializeGame(); //User-defined method to initailize the game settings
-            DisplayQuestion(); //User-defined method to display the question and answers
+            InitializeGame();
+            DisplayQuestion();
         }
 
         private void questionTimer_Tick(object sender, EventArgs e)
@@ -41,12 +44,12 @@ namespace MoneyMountain
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "Who wrote the play \"Romeo and Juliet\"?"
+                "What is the tallest building in the world?"
             };
 
             answerList = new List<string[]>
             {
-                new string[] { "A: Jane Austen", "B: Charles Dickens", "C: Mark Twain", "D: William Shakespeare" }
+                new string[] { "A: CN Tower", "B: Empire State Building", "C: Burj Khalifa", "D: Eiffel Tower" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -58,9 +61,9 @@ namespace MoneyMountain
 
         private void InitializeGame()
         {
-            earnings = 100; //Carry over value from previous question
+            earnings = 4000; //Carry over value from previous question
             questionTimer.Interval = 1000; //Time interval in milliseconds
-            time = 45; //Initializing the timer to 45 seconds
+            time = 60; //Initializing the timer to 60 seconds
             gameOver = false; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
@@ -83,9 +86,9 @@ namespace MoneyMountain
 
         private void CheckAnswer()
         {
-            if (radioButtonOption4.Checked)
+            if (radioButtonOption3.Checked)
             {
-                earnings += 100;
+                earnings *= 2;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -94,8 +97,8 @@ namespace MoneyMountain
 
             else
             {
-                earnings = 0;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption4.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                earnings /= 4;
+                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }
@@ -103,7 +106,7 @@ namespace MoneyMountain
         private void EndGame()
         {
             gameOver = true;
-            MessageBox.Show($"Game over! Your Prize Money: {earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
 
@@ -138,7 +141,6 @@ namespace MoneyMountain
         {
             //Display the choices in the listbox
             listBoxResults.Items.Clear();
-            
             for (int i = 0; i < choices.Count; i++)
             {
                 listBoxResults.Items.Add($"Option: {i + 1}: {choices[i]} votes");
@@ -147,37 +149,12 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
-            radioButtonOption3.Enabled = false;
             radioButtonOption2.Enabled = false;
+            radioButtonOption4.Enabled = false;
         }
 
-     
-        private void radioButtonOption1_CheckedChanged_1(object sender, EventArgs e)
+        private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            buttonConfirm.Enabled = radioButtonOption1.Checked;
-
-        }
-
-        private void radioButtonOption2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption2.Checked;
-
-        }
-
-        private void radioButtonOption3_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption3.Checked;
-
-        }
-
-        private void radioButtonOption4_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption4.Checked;
-
-        }
-
-        private void buttonConfirm_Click_1(object sender, EventArgs e)
-        {          
             if (MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 questionTimer.Stop();
@@ -191,11 +168,10 @@ namespace MoneyMountain
             {
                 return;
             }
-
         }
 
-        private void buttonQuit_Click_1(object sender, EventArgs e)
-        {            
+        private void buttonQuit_Click(object sender, EventArgs e)
+        {
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 questionTimer.Stop();
@@ -206,26 +182,9 @@ namespace MoneyMountain
             {
                 return;
             }
-
         }
 
-        private void buttonNext_Click_1(object sender, EventArgs e)
-        {
-            QuestionForm3 questionForm3 = new QuestionForm3();
-
-            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Hide();
-                questionForm3.Show();
-            }
-
-            else
-            {
-                return;
-            }
-        }
-
-        private void buttonLifeline1_Click_1(object sender, EventArgs e)
+        private void buttonLifeline1_Click(object sender, EventArgs e)
         {
             if (!buttonLifeline2.Enabled)
             {
@@ -288,13 +247,14 @@ namespace MoneyMountain
                     return;
                 }
             }
-
         }
 
-        private void buttonLifeline2_Click_1(object sender, EventArgs e)
+        private void buttonLifeline2_Click(object sender, EventArgs e)
         {
             if (!buttonLifeline1.Enabled)
             {
+                //MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
@@ -343,7 +303,42 @@ namespace MoneyMountain
                     return;
                 }
             }
+        }
 
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+            QuestionForm9 questionForm9 = new QuestionForm9();
+
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm9.Show();
+            }
+
+            else
+            {
+                return;
+            }
+        }
+
+        private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption1.Checked;
+        }
+
+        private void radioButtonOption2_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption2.Checked;
+        }
+
+        private void radioButtonOption3_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption3.Checked;
+        }
+
+        private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption4.Checked;
         }
     }
 }

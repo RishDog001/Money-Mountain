@@ -62,7 +62,7 @@ namespace MoneyMountain
         private void InitializeGame()
         {
             earnings = 1000; //Carry over value from previous question
-            pictureBox1.Image = Properties.Resources.aircanada_logo;
+            pictureBox1.Image = Properties.Resources.aircanada_logo; //Loading the image onto the picturebox from the resources
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 60; //Initializing the timer to 60 seconds
             gameOver = false; //Default initial value
@@ -129,7 +129,7 @@ namespace MoneyMountain
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    int choice = (i == 0) ? 1 : random.Next(1, 3);
+                    int choice = (i == 0) ? 1 : random.Next(1, 5);
                     choices.Add(choice);
                 }
             }
@@ -149,10 +149,6 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
-            //Randomize the answer choices
-            var choices = answerList.OrderBy(i => Guid.NewGuid()).ToList();
-            choices = choices.Take(2).ToList();
-
             radioButtonOption1.Enabled = false;
             radioButtonOption4.Enabled = false;
         }
@@ -192,8 +188,6 @@ namespace MoneyMountain
         {
             if (!buttonLifeline2.Enabled)
             {
-                //MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
@@ -225,8 +219,6 @@ namespace MoneyMountain
 
             else
             {
-                //MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
@@ -261,8 +253,6 @@ namespace MoneyMountain
         {
             if (!buttonLifeline1.Enabled)
             {
-                //MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)

@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace MoneyMountain
 {
-    public partial class QuestionForm2 : Form
+    public partial class TitleForm : Form
     {
-        public QuestionForm2()
+        public TitleForm()
         {
             InitializeComponent();
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            QuestionForm1 questionForm1 = new QuestionForm1();
+            Hide();
+            questionForm1.Show();
         }
     }
 }
