@@ -55,12 +55,13 @@
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.Location = new System.Drawing.Point(27, 30);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(64, 25);
+            this.questionLabel.Size = new System.Drawing.Size(53, 20);
             this.questionLabel.TabIndex = 0;
             this.questionLabel.Text = "label1";
             // 
             // questionTimer
             // 
+            this.questionTimer.Interval = 1000;
             this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
             // 
             // timerLabel
@@ -71,7 +72,7 @@
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
             this.timerLabel.Location = new System.Drawing.Point(571, 30);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(64, 25);
+            this.timerLabel.Size = new System.Drawing.Size(53, 20);
             this.timerLabel.TabIndex = 1;
             this.timerLabel.Text = "label1";
             // 
@@ -138,7 +139,7 @@
             this.radioButtonOption4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.radioButtonOption4.Location = new System.Drawing.Point(166, 98);
             this.radioButtonOption4.Name = "radioButtonOption4";
-            this.radioButtonOption4.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption4.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption4.TabIndex = 3;
             this.radioButtonOption4.TabStop = true;
             this.radioButtonOption4.Text = "radioButton1";
@@ -151,7 +152,7 @@
             this.radioButtonOption3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.radioButtonOption3.Location = new System.Drawing.Point(7, 98);
             this.radioButtonOption3.Name = "radioButtonOption3";
-            this.radioButtonOption3.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption3.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption3.TabIndex = 2;
             this.radioButtonOption3.TabStop = true;
             this.radioButtonOption3.Text = "radioButton1";
@@ -164,7 +165,7 @@
             this.radioButtonOption2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.radioButtonOption2.Location = new System.Drawing.Point(166, 34);
             this.radioButtonOption2.Name = "radioButtonOption2";
-            this.radioButtonOption2.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption2.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption2.TabIndex = 1;
             this.radioButtonOption2.TabStop = true;
             this.radioButtonOption2.Text = "radioButton1";
@@ -177,7 +178,7 @@
             this.radioButtonOption1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.radioButtonOption1.Location = new System.Drawing.Point(7, 34);
             this.radioButtonOption1.Name = "radioButtonOption1";
-            this.radioButtonOption1.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption1.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption1.TabIndex = 0;
             this.radioButtonOption1.TabStop = true;
             this.radioButtonOption1.Text = "radioButton1";

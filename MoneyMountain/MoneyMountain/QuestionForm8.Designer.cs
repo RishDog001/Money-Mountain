@@ -78,7 +78,7 @@
             this.groupBoxOptions.Controls.Add(this.radioButtonOption2);
             this.groupBoxOptions.Controls.Add(this.radioButtonOption1);
             this.groupBoxOptions.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxOptions.Location = new System.Drawing.Point(27, 203);
+            this.groupBoxOptions.Location = new System.Drawing.Point(12, 145);
             this.groupBoxOptions.Name = "groupBoxOptions";
             this.groupBoxOptions.Size = new System.Drawing.Size(431, 166);
             this.groupBoxOptions.TabIndex = 15;
@@ -183,7 +183,7 @@
             // buttonNext
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonNext.Location = new System.Drawing.Point(512, 366);
+            this.buttonNext.Location = new System.Drawing.Point(497, 349);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(124, 32);
             this.buttonNext.TabIndex = 20;
@@ -194,7 +194,7 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(577, 315);
+            this.buttonQuit.Location = new System.Drawing.Point(562, 298);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(95, 36);
             this.buttonQuit.TabIndex = 19;
@@ -205,7 +205,7 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(464, 315);
+            this.buttonConfirm.Location = new System.Drawing.Point(449, 298);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(107, 36);
             this.buttonConfirm.TabIndex = 18;
@@ -215,13 +215,14 @@
             // 
             // questionTimer
             // 
+            this.questionTimer.Interval = 1000;
             this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
             // 
             // QuestionForm8
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 408);
+            this.ClientSize = new System.Drawing.Size(794, 391);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonConfirm);

@@ -54,9 +54,9 @@
             this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
-            this.timerLabel.Location = new System.Drawing.Point(561, 45);
+            this.timerLabel.Location = new System.Drawing.Point(513, 22);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(64, 25);
+            this.timerLabel.Size = new System.Drawing.Size(53, 20);
             this.timerLabel.TabIndex = 27;
             this.timerLabel.Text = "label1";
             // 
@@ -65,9 +65,9 @@
             this.questionLabel.AutoSize = true;
             this.questionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.Location = new System.Drawing.Point(12, 45);
+            this.questionLabel.Location = new System.Drawing.Point(13, 22);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(64, 25);
+            this.questionLabel.Size = new System.Drawing.Size(53, 20);
             this.questionLabel.TabIndex = 26;
             this.questionLabel.Text = "label1";
             // 
@@ -75,9 +75,9 @@
             // 
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.ItemHeight = 16;
-            this.listBoxResults.Location = new System.Drawing.Point(525, 181);
+            this.listBoxResults.Location = new System.Drawing.Point(517, 172);
             this.listBoxResults.Name = "listBoxResults";
-            this.listBoxResults.Size = new System.Drawing.Size(247, 84);
+            this.listBoxResults.Size = new System.Drawing.Size(260, 100);
             this.listBoxResults.TabIndex = 25;
             // 
             // buttonNext
@@ -115,7 +115,7 @@
             this.radioButtonOption4.Location = new System.Drawing.Point(249, 117);
             this.radioButtonOption4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption4.Name = "radioButtonOption4";
-            this.radioButtonOption4.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption4.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption4.TabIndex = 3;
             this.radioButtonOption4.TabStop = true;
             this.radioButtonOption4.Text = "radioButton4";
@@ -128,7 +128,7 @@
             this.radioButtonOption3.Location = new System.Drawing.Point(7, 118);
             this.radioButtonOption3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption3.Name = "radioButtonOption3";
-            this.radioButtonOption3.Size = new System.Drawing.Size(107, 20);
+            this.radioButtonOption3.Size = new System.Drawing.Size(103, 20);
             this.radioButtonOption3.TabIndex = 2;
             this.radioButtonOption3.TabStop = true;
             this.radioButtonOption3.Text = "radioButton3";
@@ -142,7 +142,7 @@
             this.radioButtonOption2.Location = new System.Drawing.Point(249, 42);
             this.radioButtonOption2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption2.Name = "radioButtonOption2";
-            this.radioButtonOption2.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption2.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption2.TabIndex = 1;
             this.radioButtonOption2.TabStop = true;
             this.radioButtonOption2.Text = "radioButton2";
@@ -156,7 +156,7 @@
             this.radioButtonOption1.Location = new System.Drawing.Point(7, 42);
             this.radioButtonOption1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption1.Name = "radioButtonOption1";
-            this.radioButtonOption1.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption1.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption1.TabIndex = 0;
             this.radioButtonOption1.TabStop = true;
             this.radioButtonOption1.Text = "radioButton1";
@@ -192,7 +192,7 @@
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxLifelines.Location = new System.Drawing.Point(512, 90);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(517, 90);
             this.groupBoxLifelines.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
             this.groupBoxLifelines.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -224,6 +224,10 @@
             this.buttonLifeline2.Text = "50/50";
             this.buttonLifeline2.UseVisualStyleBackColor = true;
             this.buttonLifeline2.Click += new System.EventHandler(this.buttonLifeline2_Click);
+            // 
+            // questionTimer
+            // 
+            this.questionTimer.Interval = 1000;
             // 
             // QuestionForm3
             // 

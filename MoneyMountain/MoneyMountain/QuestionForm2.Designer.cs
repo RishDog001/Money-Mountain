@@ -52,9 +52,9 @@
             // 
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.ItemHeight = 16;
-            this.listBoxResults.Location = new System.Drawing.Point(557, 163);
+            this.listBoxResults.Location = new System.Drawing.Point(544, 151);
             this.listBoxResults.Name = "listBoxResults";
-            this.listBoxResults.Size = new System.Drawing.Size(247, 84);
+            this.listBoxResults.Size = new System.Drawing.Size(260, 84);
             this.listBoxResults.TabIndex = 17;
             // 
             // buttonNext
@@ -92,7 +92,7 @@
             this.radioButtonOption4.Location = new System.Drawing.Point(172, 101);
             this.radioButtonOption4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption4.Name = "radioButtonOption4";
-            this.radioButtonOption4.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption4.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption4.TabIndex = 3;
             this.radioButtonOption4.TabStop = true;
             this.radioButtonOption4.Text = "radioButton4";
@@ -105,7 +105,7 @@
             this.radioButtonOption3.Location = new System.Drawing.Point(5, 100);
             this.radioButtonOption3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption3.Name = "radioButtonOption3";
-            this.radioButtonOption3.Size = new System.Drawing.Size(107, 20);
+            this.radioButtonOption3.Size = new System.Drawing.Size(103, 20);
             this.radioButtonOption3.TabIndex = 2;
             this.radioButtonOption3.TabStop = true;
             this.radioButtonOption3.Text = "radioButton3";
@@ -119,7 +119,7 @@
             this.radioButtonOption2.Location = new System.Drawing.Point(172, 42);
             this.radioButtonOption2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption2.Name = "radioButtonOption2";
-            this.radioButtonOption2.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption2.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption2.TabIndex = 1;
             this.radioButtonOption2.TabStop = true;
             this.radioButtonOption2.Text = "radioButton2";
@@ -133,7 +133,7 @@
             this.radioButtonOption1.Location = new System.Drawing.Point(5, 42);
             this.radioButtonOption1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radioButtonOption1.Name = "radioButtonOption1";
-            this.radioButtonOption1.Size = new System.Drawing.Size(118, 21);
+            this.radioButtonOption1.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption1.TabIndex = 0;
             this.radioButtonOption1.TabStop = true;
             this.radioButtonOption1.Text = "radioButton1";
@@ -208,9 +208,9 @@
             this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
-            this.timerLabel.Location = new System.Drawing.Point(593, 28);
+            this.timerLabel.Location = new System.Drawing.Point(545, 19);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(64, 25);
+            this.timerLabel.Size = new System.Drawing.Size(53, 20);
             this.timerLabel.TabIndex = 19;
             this.timerLabel.Text = "label1";
             // 
@@ -219,11 +219,15 @@
             this.questionLabel.AutoSize = true;
             this.questionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.Location = new System.Drawing.Point(12, 28);
+            this.questionLabel.Location = new System.Drawing.Point(18, 19);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(64, 25);
+            this.questionLabel.Size = new System.Drawing.Size(53, 20);
             this.questionLabel.TabIndex = 18;
             this.questionLabel.Text = "label1";
+            // 
+            // questionTimer
+            // 
+            this.questionTimer.Interval = 1000;
             // 
             // QuestionForm2
             // 

@@ -1,6 +1,6 @@
 ﻿namespace MoneyMountain
 {
-    partial class QuestionForm10
+    partial class QuestionForm11
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timerLabel = new System.Windows.Forms.Label();
             this.questionLabel = new System.Windows.Forms.Label();
             this.groupBoxOptions = new System.Windows.Forms.GroupBox();
             this.radioButtonOption4 = new System.Windows.Forms.RadioButton();
@@ -43,32 +41,19 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.buttonConfirm = new System.Windows.Forms.Button();
-            this.questionTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBoxOptions.SuspendLayout();
             this.groupBoxLifelines.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // timerLabel
-            // 
-            this.timerLabel.AutoSize = true;
-            this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timerLabel.ForeColor = System.Drawing.Color.Red;
-            this.timerLabel.Location = new System.Drawing.Point(540, 23);
-            this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(53, 20);
-            this.timerLabel.TabIndex = 11;
-            this.timerLabel.Text = "label2";
             // 
             // questionLabel
             // 
             this.questionLabel.AutoSize = true;
             this.questionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.Location = new System.Drawing.Point(23, 23);
+            this.questionLabel.Location = new System.Drawing.Point(12, 19);
             this.questionLabel.Name = "questionLabel";
             this.questionLabel.Size = new System.Drawing.Size(53, 20);
-            this.questionLabel.TabIndex = 10;
+            this.questionLabel.TabIndex = 11;
             this.questionLabel.Text = "label1";
             // 
             // groupBoxOptions
@@ -78,10 +63,10 @@
             this.groupBoxOptions.Controls.Add(this.radioButtonOption2);
             this.groupBoxOptions.Controls.Add(this.radioButtonOption1);
             this.groupBoxOptions.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxOptions.Location = new System.Drawing.Point(27, 129);
+            this.groupBoxOptions.Location = new System.Drawing.Point(16, 178);
             this.groupBoxOptions.Name = "groupBoxOptions";
-            this.groupBoxOptions.Size = new System.Drawing.Size(340, 166);
-            this.groupBoxOptions.TabIndex = 21;
+            this.groupBoxOptions.Size = new System.Drawing.Size(333, 166);
+            this.groupBoxOptions.TabIndex = 22;
             this.groupBoxOptions.TabStop = false;
             this.groupBoxOptions.Text = "Options";
             // 
@@ -141,20 +126,20 @@
             // 
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.ItemHeight = 16;
-            this.listBoxResults.Location = new System.Drawing.Point(544, 179);
+            this.listBoxResults.Location = new System.Drawing.Point(520, 136);
             this.listBoxResults.Name = "listBoxResults";
             this.listBoxResults.Size = new System.Drawing.Size(241, 116);
-            this.listBoxResults.TabIndex = 23;
+            this.listBoxResults.TabIndex = 25;
             // 
             // groupBoxLifelines
             // 
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
             this.groupBoxLifelines.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxLifelines.Location = new System.Drawing.Point(544, 62);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(520, 19);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
             this.groupBoxLifelines.Size = new System.Drawing.Size(231, 91);
-            this.groupBoxLifelines.TabIndex = 22;
+            this.groupBoxLifelines.TabIndex = 24;
             this.groupBoxLifelines.TabStop = false;
             this.groupBoxLifelines.Text = "Lifelines";
             // 
@@ -183,10 +168,10 @@
             // buttonNext
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonNext.Location = new System.Drawing.Point(404, 343);
+            this.buttonNext.Location = new System.Drawing.Point(403, 312);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(124, 32);
-            this.buttonNext.TabIndex = 26;
+            this.buttonNext.TabIndex = 29;
             this.buttonNext.Text = "Next Question";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
@@ -194,10 +179,10 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(469, 301);
+            this.buttonQuit.Location = new System.Drawing.Point(468, 270);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(95, 36);
-            this.buttonQuit.TabIndex = 25;
+            this.buttonQuit.TabIndex = 28;
             this.buttonQuit.Text = "Quit Game";
             this.buttonQuit.UseVisualStyleBackColor = true;
             this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
@@ -205,34 +190,28 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(356, 301);
+            this.buttonConfirm.Location = new System.Drawing.Point(355, 270);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(107, 36);
-            this.buttonConfirm.TabIndex = 24;
+            this.buttonConfirm.TabIndex = 27;
             this.buttonConfirm.Text = "Lock Answer";
             this.buttonConfirm.UseVisualStyleBackColor = true;
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // questionTimer
-            // 
-            this.questionTimer.Interval = 1000;
-            this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
-            // 
-            // QuestionForm10
+            // QuestionForm11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(794, 386);
+            this.ClientSize = new System.Drawing.Size(773, 366);
             this.Controls.Add(this.buttonNext);
-            this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.buttonQuit);
-            this.Controls.Add(this.groupBoxLifelines);
             this.Controls.Add(this.buttonConfirm);
+            this.Controls.Add(this.listBoxResults);
+            this.Controls.Add(this.groupBoxLifelines);
             this.Controls.Add(this.groupBoxOptions);
-            this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.questionLabel);
-            this.Name = "QuestionForm10";
-            this.Text = "Question 10 - Worth $32,000";
+            this.Name = "QuestionForm11";
+            this.Text = "Question 11 - Worth $64,000";
             this.groupBoxOptions.ResumeLayout(false);
             this.groupBoxOptions.PerformLayout();
             this.groupBoxLifelines.ResumeLayout(false);
@@ -243,7 +222,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.Label questionLabel;
         private System.Windows.Forms.GroupBox groupBoxOptions;
         private System.Windows.Forms.RadioButton radioButtonOption4;
@@ -257,6 +235,5 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Button buttonQuit;
         private System.Windows.Forms.Button buttonConfirm;
-        private System.Windows.Forms.Timer questionTimer;
     }
 }

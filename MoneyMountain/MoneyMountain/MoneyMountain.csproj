@@ -60,6 +60,12 @@
     <Compile Include="QuestionForm10.Designer.cs">
       <DependentUpon>QuestionForm10.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuestionForm11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuestionForm11.Designer.cs">
+      <DependentUpon>QuestionForm11.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuestionForm2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="QuestionForm10.resx">
       <DependentUpon>QuestionForm10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionForm11.resx">
+      <DependentUpon>QuestionForm11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuestionForm2.resx">
       <DependentUpon>QuestionForm2.cs</DependentUpon>

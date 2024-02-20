@@ -98,7 +98,7 @@ namespace MoneyMountain
             else
             {
                 earnings /= 16;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption1.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }
@@ -305,7 +305,18 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm11 questionForm11 = new QuestionForm11();
 
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm11.Show();
+            }
+
+            else
+            {
+                return;
+            }
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)

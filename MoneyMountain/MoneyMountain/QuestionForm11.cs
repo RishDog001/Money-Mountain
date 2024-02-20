@@ -1,55 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
 {
-    public partial class QuestionForm9 : Form
+    public partial class QuestionForm11 : Form
     {
-        private int time; //Time in seconds
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
         private bool gameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
-        public QuestionForm9()
+        public QuestionForm11()
         {
             InitializeComponent();
             InitializeGame();
             DisplayQuestion();
         }
 
-        private void questionTimer_Tick(object sender, EventArgs e)
-        {
-            time--; //Counting down by 1 second
-            timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
-
-            if (time == 0)
-            {
-                earnings = 0;
-                MessageBox.Show($"Game Over! You have been disqualified for failing to answer the question within the time limit! \nYour Prize Money: {earnings}", "Time Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                gameOver = true;
-                Dispose();
-                Application.Exit();
-            }
-        }
-
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "Who invented the object shown in this picture?"
+                "What popular OS, first launched in 1991,\nalso has it's own mascot, Tux the penguin?"
             };
 
             answerList = new List<string[]>
             {
-                new string[] { "A: Albert Einstein", "B: Sir Issac Newton", "C: John Pemberton", "D: Thomas Edison" }
+                new string[] { "A: Windows", "B: MacOS", "C: Linux", "D: Android" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -61,13 +39,8 @@ namespace MoneyMountain
 
         private void InitializeGame()
         {
-            earnings = 8000; //Carry over value from previous question
-            pictureBox1.Image = Properties.Resources.lightbulb; //Loading the image onto the picturebox from the resources
-            questionTimer.Interval = 1000; //Time interval in milliseconds
-            time = 60; //Initializing the timer to 60 seconds
+            earnings = 32000; //Carry over value from previous question
             gameOver = false; //Default initial value
-            questionTimer.Tick += questionTimer_Tick;
-            questionTimer.Start(); //Start the timer
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
@@ -87,7 +60,7 @@ namespace MoneyMountain
 
         private void CheckAnswer()
         {
-            if (radioButtonOption4.Checked)
+            if (radioButtonOption3.Checked)
             {
                 earnings *= 2;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -98,8 +71,7 @@ namespace MoneyMountain
 
             else
             {
-                earnings /= 8;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption4.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }
@@ -150,15 +122,14 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
+            radioButtonOption1.Enabled = false;
             radioButtonOption2.Enabled = false;
-            radioButtonOption4.Enabled = false;
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                questionTimer.Stop();
                 groupBoxOptions.Enabled = false;
                 groupBoxLifelines.Enabled = false;
                 buttonQuit.Enabled = false;
@@ -175,7 +146,6 @@ namespace MoneyMountain
         {
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                questionTimer.Stop();
                 EndGame();
             }
 
@@ -198,8 +168,6 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
-
                         //Generate random choices
                         List<int> choices = AudiencePoll();
 
@@ -207,7 +175,6 @@ namespace MoneyMountain
                         DisplayChoices(choices);
 
                         buttonLifeline1.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -220,7 +187,7 @@ namespace MoneyMountain
 
             else
             {
-                if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to activate your audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
                     {
@@ -229,8 +196,6 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
-
                         //Generate random choices
                         List<int> choices = AudiencePoll();
 
@@ -238,14 +203,13 @@ namespace MoneyMountain
                         DisplayChoices(choices);
 
                         buttonLifeline1.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
 
-                else
-                {
-                    return;
+                else 
+                { 
+                    return; 
                 }
             }
         }
@@ -263,11 +227,9 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
                         listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -280,7 +242,7 @@ namespace MoneyMountain
 
             else
             {
-                if (MessageBox.Show("Are you sure you want to activate the 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to activate your 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
                     {
@@ -289,10 +251,9 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
+                        listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -306,18 +267,7 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            QuestionForm10 questionForm10 = new QuestionForm10();
-
-            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Hide();
-                questionForm10.Show();
-            }
-
-            else
-            {
-                return;
-            }
+            
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)

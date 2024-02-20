@@ -67,7 +67,7 @@
             this.questionLabel.AutoSize = true;
             this.questionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.Location = new System.Drawing.Point(25, 19);
+            this.questionLabel.Location = new System.Drawing.Point(12, 19);
             this.questionLabel.Name = "questionLabel";
             this.questionLabel.Size = new System.Drawing.Size(53, 20);
             this.questionLabel.TabIndex = 8;
@@ -217,6 +217,7 @@
             // 
             // questionTimer
             // 
+            this.questionTimer.Interval = 1000;
             this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
             // 
             // pictureBox1
