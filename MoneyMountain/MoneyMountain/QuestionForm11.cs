@@ -266,7 +266,18 @@ namespace MoneyMountain
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
-        {
+        {            QuestionForm12 questionForm12 = new QuestionForm12();
+
+            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm12.Show();
+            }
+
+            else
+            {
+                return;
+            }
             
         }
 
