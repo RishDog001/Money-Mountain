@@ -69,7 +69,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption3.Checked)
             {
-                earnings *= 2;
+                earnings = earnings + 61000;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -78,6 +78,7 @@ namespace MoneyMountain
 
             else
             {
+                earnings/= 2;
                 MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
