@@ -1,10 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
 {
-    public partial class QuestionForm11 : Form
+    public partial class QuestionForm12 : Form
     {
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
@@ -12,22 +18,15 @@ namespace MoneyMountain
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
-        public QuestionForm11()
-        {
-            InitializeComponent();
-            InitializeGame();
-            DisplayQuestion();
-        }
-
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "What popular OS, first launched in 1991,\nalso has it's own mascot, Tux the penguin?"
+                "What is the first web browser?"
             };
 
             answerList = new List<string[]>
             {
-                new string[] { "A: Windows", "B: MacOS", "C: Linux", "D: Android" }
+                new string[] { "A: Netscape Navigator", "B: Internet Explorer", "C: Mosaic", "D: Google Chrome" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -37,9 +36,17 @@ namespace MoneyMountain
             radioButtonOption4.Text = answerList[questionIndex][3];
         }
 
+
+        public QuestionForm12()
+        {
+            InitializeComponent();
+            InitializeGame();
+            DisplayQuestion();
+        }
+
         private void InitializeGame()
         {
-            earnings = 32000; //Carry over value from previous question
+            earnings = 64000; //Carry over value from previous question
             gameOver = false; //Default initial value
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
@@ -62,7 +69,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption3.Checked)
             {
-                earnings *= 2;
+                earnings = earnings + 61000;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -71,6 +78,7 @@ namespace MoneyMountain
 
             else
             {
+                earnings/= 2;
                 MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
@@ -82,7 +90,6 @@ namespace MoneyMountain
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
-
         private List<int> AudiencePoll()
         {
             //Generate random audience choices
@@ -140,6 +147,7 @@ namespace MoneyMountain
             {
                 return;
             }
+
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
@@ -153,6 +161,12 @@ namespace MoneyMountain
             {
                 return;
             }
+
+        }
+
+        private void buttonNext_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void buttonLifeline1_Click(object sender, EventArgs e)
@@ -207,11 +221,12 @@ namespace MoneyMountain
                     }
                 }
 
-                else 
-                { 
-                    return; 
+                else
+                {
+                    return;
                 }
             }
+
         }
 
         private void buttonLifeline2_Click(object sender, EventArgs e)
@@ -263,42 +278,31 @@ namespace MoneyMountain
                     return;
                 }
             }
-        }
 
-        private void buttonNext_Click(object sender, EventArgs e)
-        {            QuestionForm12 questionForm12 = new QuestionForm12();
-
-            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Hide();
-                questionForm12.Show();
-            }
-
-            else
-            {
-                return;
-            }
-            
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption1.Checked;
+
         }
 
         private void radioButtonOption2_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption2.Checked;
+
         }
 
         private void radioButtonOption3_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption3.Checked;
+
         }
 
         private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption4.Checked;
+
         }
     }
 }
