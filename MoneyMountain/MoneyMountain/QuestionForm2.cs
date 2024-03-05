@@ -151,29 +151,24 @@ namespace MoneyMountain
             radioButtonOption2.Enabled = false;
         }
 
-     
         private void radioButtonOption1_CheckedChanged_1(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption1.Checked;
-
         }
 
         private void radioButtonOption2_CheckedChanged_1(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption2.Checked;
-
         }
 
         private void radioButtonOption3_CheckedChanged_1(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption3.Checked;
-
         }
 
         private void radioButtonOption4_CheckedChanged_1(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption4.Checked;
-
         }
 
         private void buttonConfirm_Click_1(object sender, EventArgs e)
@@ -206,7 +201,6 @@ namespace MoneyMountain
             {
                 return;
             }
-
         }
 
         private void buttonNext_Click_1(object sender, EventArgs e)

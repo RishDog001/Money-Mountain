@@ -232,7 +232,7 @@
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.questionLabel);
             this.Name = "QuestionForm7";
-            this.Text = "QuestionForm7";
+            this.Text = "Question 7 - Worth $4000";
             this.groupBoxLifelines.ResumeLayout(false);
             this.groupBoxOptions.ResumeLayout(false);
             this.groupBoxOptions.PerformLayout();

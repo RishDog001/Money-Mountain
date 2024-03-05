@@ -1,55 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
 {
-    public partial class QuestionForm8 : Form
+    public partial class QuestionForm13 : Form
     {
-        private int time; //Time in seconds
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
         private bool gameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
-        public QuestionForm8()
+        public QuestionForm13()
         {
             InitializeComponent();
             InitializeGame();
             DisplayQuestion();
         }
 
-        private void questionTimer_Tick(object sender, EventArgs e)
-        {
-            time--; //Counting down by 1 second
-            timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
-
-            if (time == 0)
-            {
-                earnings = 0;
-                MessageBox.Show($"Game Over! You have been disqualified for failing to answer the question within the time limit! \nYour Prize Money: {earnings}", "Time Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                gameOver = true;
-                Dispose();
-                Application.Exit();
-            }
-        }
-
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "What is the tallest building in the world?"
+                "Which country has the most fresh water?"
             };
 
             answerList = new List<string[]>
             {
-                new string[] { "A: CN Tower", "B: Empire State Building", "C: Burj Khalifa", "D: Eiffel Tower" }
+                new string[] { "A: Russia", "B: Brazil", "C: China", "D: Mexico" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -61,12 +39,8 @@ namespace MoneyMountain
 
         private void InitializeGame()
         {
-            earnings = 4000; //Carry over value from previous question
-            questionTimer.Interval = 1000; //Time interval in milliseconds
-            time = 60; //Initializing the timer to 60 seconds
+            earnings = 125000; //Carry over value from previous question
             gameOver = false; //Default initial value
-            questionTimer.Tick += questionTimer_Tick;
-            questionTimer.Start(); //Start the timer
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
@@ -86,7 +60,7 @@ namespace MoneyMountain
 
         private void CheckAnswer()
         {
-            if (radioButtonOption3.Checked)
+            if (radioButtonOption2.Checked)
             {
                 earnings *= 2;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,8 +71,8 @@ namespace MoneyMountain
 
             else
             {
-                earnings /= 4;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                earnings -= 93000;
+                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption2.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }
@@ -149,7 +123,7 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
-            radioButtonOption2.Enabled = false;
+            radioButtonOption3.Enabled = false;
             radioButtonOption4.Enabled = false;
         }
 
@@ -157,7 +131,6 @@ namespace MoneyMountain
         {
             if (MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                questionTimer.Stop();
                 groupBoxOptions.Enabled = false;
                 groupBoxLifelines.Enabled = false;
                 buttonQuit.Enabled = false;
@@ -174,7 +147,6 @@ namespace MoneyMountain
         {
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                questionTimer.Stop();
                 EndGame();
             }
 
@@ -197,8 +169,6 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
-
                         //Generate random choices
                         List<int> choices = AudiencePoll();
 
@@ -206,7 +176,6 @@ namespace MoneyMountain
                         DisplayChoices(choices);
 
                         buttonLifeline1.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -219,7 +188,7 @@ namespace MoneyMountain
 
             else
             {
-                if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to activate your audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
                     {
@@ -228,8 +197,6 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
-
                         //Generate random choices
                         List<int> choices = AudiencePoll();
 
@@ -237,7 +204,6 @@ namespace MoneyMountain
                         DisplayChoices(choices);
 
                         buttonLifeline1.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -262,11 +228,9 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
                         listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -279,7 +243,7 @@ namespace MoneyMountain
 
             else
             {
-                if (MessageBox.Show("Are you sure you want to activate the 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to activate your 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (gameOver)
                     {
@@ -288,10 +252,9 @@ namespace MoneyMountain
 
                     else
                     {
-                        questionTimer.Stop();
+                        listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
-                        questionTimer.Start();
                         buttonQuit.Enabled = true;
                     }
                 }
@@ -305,12 +268,12 @@ namespace MoneyMountain
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            QuestionForm9 questionForm9 = new QuestionForm9();
+            QuestionForm14 questionForm14 = new QuestionForm14();
 
-            if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Ready for the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Hide();
-                questionForm9.Show();
+                questionForm14.Show();
             }
 
             else

@@ -292,8 +292,6 @@ namespace MoneyMountain
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
             if (MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 questionTimer.Stop();
@@ -343,4 +341,3 @@ namespace MoneyMountain
         }
     }
 }
-    

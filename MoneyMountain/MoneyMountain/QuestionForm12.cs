@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MoneyMountain
@@ -17,6 +11,13 @@ namespace MoneyMountain
         private bool gameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
+
+        public QuestionForm12()
+        {
+            InitializeComponent();
+            InitializeGame();
+            DisplayQuestion();
+        }
 
         private void DisplayQuestion()
         {
@@ -34,14 +35,6 @@ namespace MoneyMountain
             radioButtonOption2.Text = answerList[questionIndex][1];
             radioButtonOption3.Text = answerList[questionIndex][2];
             radioButtonOption4.Text = answerList[questionIndex][3];
-        }
-
-
-        public QuestionForm12()
-        {
-            InitializeComponent();
-            InitializeGame();
-            DisplayQuestion();
         }
 
         private void InitializeGame()
@@ -69,7 +62,7 @@ namespace MoneyMountain
         {
             if (radioButtonOption3.Checked)
             {
-                earnings = earnings + 61000;
+                earnings += 61000;
                 MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 buttonConfirm.Visible = false;
                 buttonQuit.Visible = false;
@@ -78,7 +71,7 @@ namespace MoneyMountain
 
             else
             {
-                earnings/= 2;
+                earnings /= 2;
                 MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
@@ -90,6 +83,7 @@ namespace MoneyMountain
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
+
         private List<int> AudiencePoll()
         {
             //Generate random audience choices
@@ -147,7 +141,6 @@ namespace MoneyMountain
             {
                 return;
             }
-
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
@@ -161,12 +154,22 @@ namespace MoneyMountain
             {
                 return;
             }
-
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
+            QuestionForm13 questionForm13 = new QuestionForm13();
 
+            if (MessageBox.Show("Ready for the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                questionForm13.Show();
+            }
+
+            else
+            {
+                return;
+            }
         }
 
         private void buttonLifeline1_Click(object sender, EventArgs e)
@@ -226,7 +229,6 @@ namespace MoneyMountain
                     return;
                 }
             }
-
         }
 
         private void buttonLifeline2_Click(object sender, EventArgs e)
@@ -278,31 +280,26 @@ namespace MoneyMountain
                     return;
                 }
             }
-
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption1.Checked;
-
         }
 
         private void radioButtonOption2_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption2.Checked;
-
         }
 
         private void radioButtonOption3_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption3.Checked;
-
         }
 
         private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
         {
             buttonConfirm.Enabled = radioButtonOption4.Checked;
-
         }
     }
 }

@@ -266,7 +266,8 @@ namespace MoneyMountain
         }
 
         private void buttonNext_Click(object sender, EventArgs e)
-        {            QuestionForm12 questionForm12 = new QuestionForm12();
+        {  
+            QuestionForm12 questionForm12 = new QuestionForm12();
 
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -278,7 +279,6 @@ namespace MoneyMountain
             {
                 return;
             }
-            
         }
 
         private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
