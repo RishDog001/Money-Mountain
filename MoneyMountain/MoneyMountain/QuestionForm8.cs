@@ -80,6 +80,8 @@ namespace MoneyMountain
             radioButtonOption3.Checked = false;
             radioButtonOption4.Checked = false;
 
+            radioButtonOption1.AutoCheck = true;
+
             questionIndex = 0;
             DisplayQuestion();
         }
