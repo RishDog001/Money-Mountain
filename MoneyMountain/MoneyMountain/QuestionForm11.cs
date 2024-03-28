@@ -134,21 +134,7 @@ namespace MoneyMountain
             {
                 groupBoxOptions.Enabled = false;
                 groupBoxLifelines.Enabled = false;
-                buttonQuit.Enabled = false;
                 CheckAnswer();
-            }
-
-            else
-            {
-                return;
-            }
-        }
-
-        private void buttonQuit_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                EndGame();
             }
 
             else
@@ -177,7 +163,6 @@ namespace MoneyMountain
                         DisplayChoices(choices);
 
                         buttonLifeline1.Enabled = false;
-                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -205,7 +190,6 @@ namespace MoneyMountain
                         DisplayChoices(choices);
 
                         buttonLifeline1.Enabled = false;
-                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -232,7 +216,6 @@ namespace MoneyMountain
                         listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
-                        buttonQuit.Enabled = true;
                     }
                 }
 
@@ -256,7 +239,6 @@ namespace MoneyMountain
                         listBoxResults.Items.Clear();
                         FiftyFifty();
                         buttonLifeline2.Enabled = false;
-                        buttonQuit.Enabled = true;
                     }
                 }
 

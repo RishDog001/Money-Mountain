@@ -22,7 +22,7 @@ namespace MoneyMountain
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "According to the Population Reference Bureau,\n what is the approximate number of people who\n have ever lived on earth?"
+                "According to the Population Reference Bureau,\nwhat is the approximate number of people who\nhave ever lived on earth?"
             };
 
             answerList = new List<string[]>
@@ -42,8 +42,7 @@ namespace MoneyMountain
             earnings = 1000000; //Carry over value from previous question
             gameOver = false; //Default initial value
 
-            buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
-            buttonQuit.Enabled = false;
+            buttonConfirm.Enabled = false; //Disabling the confirm button at runtime
 
             groupBoxLifelines.Enabled = false; //Disabling the lifeline buttons inside the groupbox at runtime since the user won't be able to use them for the final question
             listBoxResults.Enabled = false; //Disabling the listbox at runtime
@@ -80,9 +79,11 @@ namespace MoneyMountain
 
         private void EndGame()
         {
+            LoginForm loginForm = new LoginForm();
             gameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Exit();
+            Hide();
+            loginForm.Show();
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)

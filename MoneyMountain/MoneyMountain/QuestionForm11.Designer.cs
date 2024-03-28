@@ -199,7 +199,6 @@
             this.buttonQuit.TabIndex = 28;
             this.buttonQuit.Text = "Quit Game";
             this.buttonQuit.UseVisualStyleBackColor = true;
-            this.buttonQuit.Click += new System.EventHandler(this.buttonQuit_Click);
             // 
             // buttonConfirm
             // 

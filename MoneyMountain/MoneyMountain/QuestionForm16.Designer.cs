@@ -131,7 +131,7 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(569, 349);
+            this.buttonQuit.Location = new System.Drawing.Point(630, 337);
             this.buttonQuit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(107, 45);
@@ -143,7 +143,7 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(433, 349);
+            this.buttonConfirm.Location = new System.Drawing.Point(487, 337);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(120, 45);
@@ -157,11 +157,11 @@
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
             this.groupBoxLifelines.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxLifelines.Location = new System.Drawing.Point(433, 15);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(487, 13);
             this.groupBoxLifelines.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
             this.groupBoxLifelines.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxLifelines.Size = new System.Drawing.Size(260, 114);
+            this.groupBoxLifelines.Size = new System.Drawing.Size(271, 114);
             this.groupBoxLifelines.TabIndex = 47;
             this.groupBoxLifelines.TabStop = false;
             this.groupBoxLifelines.Text = "Lifelines";
@@ -192,7 +192,7 @@
             // 
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.ItemHeight = 20;
-            this.listBoxResults.Location = new System.Drawing.Point(433, 161);
+            this.listBoxResults.Location = new System.Drawing.Point(487, 161);
             this.listBoxResults.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxResults.Name = "listBoxResults";
             this.listBoxResults.Size = new System.Drawing.Size(271, 144);
@@ -202,7 +202,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 416);
+            this.ClientSize = new System.Drawing.Size(770, 416);
             this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.groupBoxLifelines);
             this.Controls.Add(this.buttonQuit);

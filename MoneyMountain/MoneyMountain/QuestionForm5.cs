@@ -105,6 +105,7 @@ namespace MoneyMountain
         {
             gameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Dispose();
             Application.Exit();
         }
 

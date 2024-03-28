@@ -52,7 +52,7 @@
             this.groupBoxOptions.Controls.Add(this.radioButtonOption2);
             this.groupBoxOptions.Controls.Add(this.radioButtonOption1);
             this.groupBoxOptions.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxOptions.Location = new System.Drawing.Point(18, 269);
+            this.groupBoxOptions.Location = new System.Drawing.Point(18, 238);
             this.groupBoxOptions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxOptions.Name = "groupBoxOptions";
             this.groupBoxOptions.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -68,7 +68,7 @@
             this.radioButtonOption4.Location = new System.Drawing.Point(230, 151);
             this.radioButtonOption4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonOption4.Name = "radioButtonOption4";
-            this.radioButtonOption4.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption4.Size = new System.Drawing.Size(137, 25);
             this.radioButtonOption4.TabIndex = 3;
             this.radioButtonOption4.TabStop = true;
             this.radioButtonOption4.Text = "radioButton1";
@@ -82,7 +82,7 @@
             this.radioButtonOption3.Location = new System.Drawing.Point(7, 151);
             this.radioButtonOption3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonOption3.Name = "radioButtonOption3";
-            this.radioButtonOption3.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption3.Size = new System.Drawing.Size(137, 25);
             this.radioButtonOption3.TabIndex = 2;
             this.radioButtonOption3.TabStop = true;
             this.radioButtonOption3.Text = "radioButton1";
@@ -96,7 +96,7 @@
             this.radioButtonOption2.Location = new System.Drawing.Point(230, 49);
             this.radioButtonOption2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonOption2.Name = "radioButtonOption2";
-            this.radioButtonOption2.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption2.Size = new System.Drawing.Size(137, 25);
             this.radioButtonOption2.TabIndex = 1;
             this.radioButtonOption2.TabStop = true;
             this.radioButtonOption2.Text = "radioButton1";
@@ -111,7 +111,7 @@
             this.radioButtonOption1.Location = new System.Drawing.Point(8, 49);
             this.radioButtonOption1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioButtonOption1.Name = "radioButtonOption1";
-            this.radioButtonOption1.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption1.Size = new System.Drawing.Size(137, 25);
             this.radioButtonOption1.TabIndex = 0;
             this.radioButtonOption1.TabStop = true;
             this.radioButtonOption1.Text = "radioButton1";
@@ -125,7 +125,7 @@
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.questionLabel.Location = new System.Drawing.Point(14, 11);
             this.questionLabel.Name = "questionLabel";
-            this.questionLabel.Size = new System.Drawing.Size(53, 20);
+            this.questionLabel.Size = new System.Drawing.Size(64, 25);
             this.questionLabel.TabIndex = 34;
             this.questionLabel.Text = "label1";
             // 
@@ -133,7 +133,7 @@
             // 
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.ItemHeight = 20;
-            this.listBoxResults.Location = new System.Drawing.Point(603, 162);
+            this.listBoxResults.Location = new System.Drawing.Point(597, 154);
             this.listBoxResults.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.listBoxResults.Name = "listBoxResults";
             this.listBoxResults.Size = new System.Drawing.Size(271, 144);
@@ -144,11 +144,11 @@
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
             this.groupBoxLifelines.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxLifelines.Location = new System.Drawing.Point(603, 15);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(597, 13);
             this.groupBoxLifelines.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
             this.groupBoxLifelines.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxLifelines.Size = new System.Drawing.Size(260, 114);
+            this.groupBoxLifelines.Size = new System.Drawing.Size(271, 114);
             this.groupBoxLifelines.TabIndex = 36;
             this.groupBoxLifelines.TabStop = false;
             this.groupBoxLifelines.Text = "Lifelines";
@@ -180,7 +180,7 @@
             // buttonNext
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonNext.Location = new System.Drawing.Point(475, 430);
+            this.buttonNext.Location = new System.Drawing.Point(474, 406);
             this.buttonNext.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(140, 40);
@@ -192,7 +192,7 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(548, 379);
+            this.buttonQuit.Location = new System.Drawing.Point(548, 347);
             this.buttonQuit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonQuit.Name = "buttonQuit";
             this.buttonQuit.Size = new System.Drawing.Size(107, 45);
@@ -204,7 +204,7 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(421, 379);
+            this.buttonConfirm.Location = new System.Drawing.Point(422, 347);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonConfirm.Name = "buttonConfirm";
             this.buttonConfirm.Size = new System.Drawing.Size(120, 45);
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(883, 488);
+            this.ClientSize = new System.Drawing.Size(899, 460);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonConfirm);

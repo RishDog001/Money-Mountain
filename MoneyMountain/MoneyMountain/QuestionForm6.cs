@@ -107,7 +107,9 @@ namespace MoneyMountain
         {
             gameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Exit();
+            LoginForm loginForm = new LoginForm();
+            Hide();
+            loginForm.Show();
         }
 
         private List<int> AudiencePoll()

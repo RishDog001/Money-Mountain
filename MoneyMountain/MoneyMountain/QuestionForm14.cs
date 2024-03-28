@@ -28,7 +28,7 @@ namespace MoneyMountain
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "What technology company was founded in 1993 with the vision that the next wave of\n computing would be graphics-based?"
+                "What technology company was founded in 1993\nwith the vision that the next wave of\ncomputing would be graphics-based?"
             };
 
             answerList = new List<string[]>
@@ -87,9 +87,11 @@ namespace MoneyMountain
 
         private void EndGame()
         {
+            LoginForm loginForm = new LoginForm();
             gameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Application.Exit();
+            Hide();
+            loginForm.Show();
         }
 
         private List<int> AudiencePoll()
@@ -131,8 +133,8 @@ namespace MoneyMountain
 
         private void FiftyFifty()
         {
+            radioButtonOption1.Enabled = false;
             radioButtonOption3.Enabled = false;
-            radioButtonOption4.Enabled = false;
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)

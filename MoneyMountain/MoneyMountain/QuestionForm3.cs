@@ -45,7 +45,7 @@ namespace MoneyMountain
 
             answerList = new List<string[]>
             {
-                new string[] { "A:  Andes Mountain Range", "B: Himalayan Mountain Range", "C: Alps Mountain Range", "D: Mount Kilimanjaro in Africa" }
+                new string[] { "A: Andes Mountain Range", "B: Mount Everest", "C: Swiss Alps", "D: Mount Kilimanjaro" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -96,6 +96,7 @@ namespace MoneyMountain
             {
                 earnings = 0;
                 MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption2.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Dispose();
                 EndGame();
             }
         }
