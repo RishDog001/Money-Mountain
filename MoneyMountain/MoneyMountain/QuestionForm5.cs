@@ -29,6 +29,7 @@ namespace MoneyMountain
 
             if (time == 0)
             {
+                questionTimer.Stop();
                 earnings = 0;
                 MessageBox.Show($"Game Over! You have been disqualified for failing to answer the question within the time limit! \nYour Prize Money: {earnings}", "Time Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 gameOver = true;
