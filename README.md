@@ -3,7 +3,7 @@ Our capstone project is a trivia game with a built-in money transfer application
 
 The form controls are as follows: 
 •	Four radio buttons representing each answer choice.
-•	Three buttons representing lifelines in case the user gets stuck on a question and two more buttons (1 button gets enabled when the user answers a question correctly. Once clicked, it takes you to the next question. The other button lets the user quit the game if they don’t know the answer to a question and if they have used up both lifelines – note that the quit button only gets enabled if at least one of the two lifeline buttons becomes disabled).
+•	Three buttons representing lifelines in case the user gets stuck on a question and two more buttons (1 button gets enabled when the user answers a question correctly. Once clicked, it takes you to the next question. The other button lets the user quit the game if they don’t know the answer to a question and if they have used up both lifelines – note that the quit button only gets enabled if at least one of the two lifeline buttons becomes disabled). Note that each lifeline is a one-time use for the entire game, so it's important to use them wisely.
 •	Two labels: 1 to display the question on the form and the other to display the timer on the screen.
 •	Timer: The 1st five questions will have a timer counting down from 45 seconds, and then the following five questions will have a timer counting down from 60 seconds (if the user fails to answer any question within the time limit, they automatically get disqualified). 
 •	Message box (aka pop-up alert) to display confirmation/status messages and validation error messages for the login/registration page and the money transfer page.
