@@ -20,6 +20,7 @@ namespace MoneyMountain
             InitializeComponent();
             InitializeGame();
             DisplayQuestion();
+            timerLabel.Text = string.Empty;
         }
 
         private void questionTimer_Tick(object sender, EventArgs e)
@@ -63,7 +64,6 @@ namespace MoneyMountain
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
-            questionTimer.Start(); //Start the timer
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
@@ -81,6 +81,12 @@ namespace MoneyMountain
 
             questionIndex = 0;
             DisplayQuestion();
+        }
+
+        private void buttonStartTimer_Click(object sender, EventArgs e)
+        {
+            questionTimer.Start(); //Start the timer
+            buttonStartTimer.Enabled = false;
         }
 
         private void CheckAnswer()
@@ -309,7 +315,7 @@ namespace MoneyMountain
 
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Hide();
+                Close();
                 questionForm6.Show();
             }
 

@@ -255,7 +255,7 @@ namespace MoneyMountain
 
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Hide();
+                Close();
                 questionForm12.Show();
             }
 

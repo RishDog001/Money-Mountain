@@ -109,7 +109,7 @@ namespace MoneyMountain
             gameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LoginForm loginForm = new LoginForm();
-            Hide();
+            Close();
             loginForm.Show();
         }
 
@@ -312,7 +312,7 @@ namespace MoneyMountain
 
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Hide();
+                Close();
                 questionForm7.Show();
             }
 

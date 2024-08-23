@@ -44,6 +44,7 @@
             this.buttonNext = new System.Windows.Forms.Button();
             this.timerLabel = new System.Windows.Forms.Label();
             this.listBoxResults = new System.Windows.Forms.ListBox();
+            this.buttonStartTimer = new System.Windows.Forms.Button();
             this.groupBoxLifelines.SuspendLayout();
             this.groupBoxOptions.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             // buttonLifeline1
             // 
             this.buttonLifeline1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline1.Location = new System.Drawing.Point(5, 20);
+            this.buttonLifeline1.Location = new System.Drawing.Point(6, 20);
             this.buttonLifeline1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLifeline1.Name = "buttonLifeline1";
             this.buttonLifeline1.Size = new System.Drawing.Size(108, 29);
@@ -68,12 +69,12 @@
             // buttonLifeline2
             // 
             this.buttonLifeline2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline2.Location = new System.Drawing.Point(146, 20);
+            this.buttonLifeline2.Location = new System.Drawing.Point(120, 20);
             this.buttonLifeline2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonLifeline2.Name = "buttonLifeline2";
             this.buttonLifeline2.Size = new System.Drawing.Size(108, 29);
             this.buttonLifeline2.TabIndex = 1;
-            this.buttonLifeline2.Text = "50/50";
+            this.buttonLifeline2.Text = "Double Dip";
             this.buttonLifeline2.UseVisualStyleBackColor = true;
             this.buttonLifeline2.Click += new System.EventHandler(this.buttonLifeline2_Click);
             // 
@@ -93,11 +94,11 @@
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxLifelines.Location = new System.Drawing.Point(522, 58);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(513, 95);
             this.groupBoxLifelines.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
             this.groupBoxLifelines.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBoxLifelines.Size = new System.Drawing.Size(260, 63);
+            this.groupBoxLifelines.Size = new System.Drawing.Size(247, 61);
             this.groupBoxLifelines.TabIndex = 3;
             this.groupBoxLifelines.TabStop = false;
             this.groupBoxLifelines.Text = "Lifelines";
@@ -105,10 +106,10 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(380, 238);
+            this.buttonConfirm.Location = new System.Drawing.Point(509, 270);
             this.buttonConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(107, 35);
+            this.buttonConfirm.Size = new System.Drawing.Size(107, 28);
             this.buttonConfirm.TabIndex = 5;
             this.buttonConfirm.Text = "Lock Answer";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -117,10 +118,10 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(493, 238);
+            this.buttonQuit.Location = new System.Drawing.Point(622, 270);
             this.buttonQuit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(101, 35);
+            this.buttonQuit.Size = new System.Drawing.Size(101, 28);
             this.buttonQuit.TabIndex = 6;
             this.buttonQuit.Text = "Quit Game";
             this.buttonQuit.UseVisualStyleBackColor = true;
@@ -133,7 +134,7 @@
             this.groupBoxOptions.Controls.Add(this.radioButtonOption2);
             this.groupBoxOptions.Controls.Add(this.radioButtonOption1);
             this.groupBoxOptions.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxOptions.Location = new System.Drawing.Point(40, 114);
+            this.groupBoxOptions.Location = new System.Drawing.Point(12, 114);
             this.groupBoxOptions.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBoxOptions.Name = "groupBoxOptions";
             this.groupBoxOptions.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -200,10 +201,10 @@
             // buttonNext
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonNext.Location = new System.Drawing.Point(424, 277);
+            this.buttonNext.Location = new System.Drawing.Point(509, 314);
             this.buttonNext.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(119, 38);
+            this.buttonNext.Size = new System.Drawing.Size(107, 28);
             this.buttonNext.TabIndex = 9;
             this.buttonNext.Text = "Next Question";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -215,25 +216,38 @@
             this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
-            this.timerLabel.Location = new System.Drawing.Point(571, 8);
+            this.timerLabel.Location = new System.Drawing.Point(515, 53);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(0, 20);
+            this.timerLabel.Size = new System.Drawing.Size(53, 20);
             this.timerLabel.TabIndex = 10;
+            this.timerLabel.Text = "label1";
             // 
             // listBoxResults
             // 
             this.listBoxResults.FormattingEnabled = true;
             this.listBoxResults.ItemHeight = 16;
-            this.listBoxResults.Location = new System.Drawing.Point(529, 146);
+            this.listBoxResults.Location = new System.Drawing.Point(513, 175);
             this.listBoxResults.Name = "listBoxResults";
             this.listBoxResults.Size = new System.Drawing.Size(247, 84);
             this.listBoxResults.TabIndex = 11;
+            // 
+            // buttonStartTimer
+            // 
+            this.buttonStartTimer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonStartTimer.Location = new System.Drawing.Point(622, 314);
+            this.buttonStartTimer.Name = "buttonStartTimer";
+            this.buttonStartTimer.Size = new System.Drawing.Size(101, 28);
+            this.buttonStartTimer.TabIndex = 12;
+            this.buttonStartTimer.Text = "Start Timer";
+            this.buttonStartTimer.UseVisualStyleBackColor = true;
+            this.buttonStartTimer.Click += new System.EventHandler(this.buttonStartTimer_Click);
             // 
             // QuestionForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 326);
+            this.ClientSize = new System.Drawing.Size(772, 354);
+            this.Controls.Add(this.buttonStartTimer);
             this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.timerLabel);
             this.Controls.Add(this.buttonNext);
@@ -244,6 +258,7 @@
             this.Controls.Add(this.questionLabel);
             this.Name = "QuestionForm1";
             this.Text = "Question 1 - Worth $100";
+            this.Load += new System.EventHandler(this.QuestionForm1_Load);
             this.groupBoxLifelines.ResumeLayout(false);
             this.groupBoxOptions.ResumeLayout(false);
             this.groupBoxOptions.PerformLayout();
@@ -269,6 +284,7 @@
         private System.Windows.Forms.Button buttonNext;
         private System.Windows.Forms.Label timerLabel;
         private System.Windows.Forms.ListBox listBoxResults;
+        private System.Windows.Forms.Button buttonStartTimer;
     }
 }
 

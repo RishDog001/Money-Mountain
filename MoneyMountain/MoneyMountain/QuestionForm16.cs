@@ -82,7 +82,7 @@ namespace MoneyMountain
             LoginForm loginForm = new LoginForm();
             gameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Hide();
+            Close();
             loginForm.Show();
         }
 

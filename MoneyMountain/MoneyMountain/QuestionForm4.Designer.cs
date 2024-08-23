@@ -44,6 +44,7 @@
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.buttonQuit = new System.Windows.Forms.Button();
             this.buttonNext = new System.Windows.Forms.Button();
+            this.buttonStartTimer = new System.Windows.Forms.Button();
             this.groupBoxLifelines.SuspendLayout();
             this.groupBoxOptions.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +71,7 @@
             this.timerLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.timerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
-            this.timerLabel.Location = new System.Drawing.Point(571, 30);
+            this.timerLabel.Location = new System.Drawing.Point(526, 30);
             this.timerLabel.Name = "timerLabel";
             this.timerLabel.Size = new System.Drawing.Size(53, 20);
             this.timerLabel.TabIndex = 1;
@@ -116,7 +117,7 @@
             this.listBoxResults.ItemHeight = 16;
             this.listBoxResults.Location = new System.Drawing.Point(524, 155);
             this.listBoxResults.Name = "listBoxResults";
-            this.listBoxResults.Size = new System.Drawing.Size(264, 84);
+            this.listBoxResults.Size = new System.Drawing.Size(258, 84);
             this.listBoxResults.TabIndex = 3;
             // 
             // groupBoxOptions
@@ -188,9 +189,9 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(333, 253);
+            this.buttonConfirm.Location = new System.Drawing.Point(524, 245);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(118, 37);
+            this.buttonConfirm.Size = new System.Drawing.Size(107, 27);
             this.buttonConfirm.TabIndex = 5;
             this.buttonConfirm.Text = "Lock Answer";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -199,9 +200,9 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(457, 253);
+            this.buttonQuit.Location = new System.Drawing.Point(637, 245);
             this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(106, 37);
+            this.buttonQuit.Size = new System.Drawing.Size(96, 27);
             this.buttonQuit.TabIndex = 6;
             this.buttonQuit.Text = "Quit Game";
             this.buttonQuit.UseVisualStyleBackColor = true;
@@ -210,19 +211,31 @@
             // buttonNext
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonNext.Location = new System.Drawing.Point(384, 296);
+            this.buttonNext.Location = new System.Drawing.Point(524, 288);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(131, 36);
+            this.buttonNext.Size = new System.Drawing.Size(107, 26);
             this.buttonNext.TabIndex = 7;
             this.buttonNext.Text = "Next Question";
             this.buttonNext.UseVisualStyleBackColor = true;
             this.buttonNext.Click += new System.EventHandler(this.buttonNext_Click);
+            // 
+            // buttonStartTimer
+            // 
+            this.buttonStartTimer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonStartTimer.Location = new System.Drawing.Point(637, 288);
+            this.buttonStartTimer.Name = "buttonStartTimer";
+            this.buttonStartTimer.Size = new System.Drawing.Size(96, 26);
+            this.buttonStartTimer.TabIndex = 8;
+            this.buttonStartTimer.Text = "Start Timer";
+            this.buttonStartTimer.UseVisualStyleBackColor = true;
+            this.buttonStartTimer.Click += new System.EventHandler(this.buttonStartTimer_Click);
             // 
             // QuestionForm4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(815, 336);
+            this.Controls.Add(this.buttonStartTimer);
             this.Controls.Add(this.buttonNext);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonConfirm);
@@ -258,5 +271,6 @@
         private System.Windows.Forms.RadioButton radioButtonOption1;
         private System.Windows.Forms.RadioButton radioButtonOption4;
         private System.Windows.Forms.RadioButton radioButtonOption3;
+        private System.Windows.Forms.Button buttonStartTimer;
     }
 }

@@ -195,7 +195,7 @@ namespace MoneyMountain
         private void btnNext_Click(object sender, EventArgs e)
         {
             FundTransferForm fundTransferForm = new FundTransferForm();
-            Hide();
+            Close();
             fundTransferForm.Show();
         }
     }

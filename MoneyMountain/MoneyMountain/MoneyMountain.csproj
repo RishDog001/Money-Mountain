@@ -97,6 +97,7 @@
     <Compile Include="FundTransferForm.Designer.cs">
       <DependentUpon>FundTransferForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LifelineManager.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

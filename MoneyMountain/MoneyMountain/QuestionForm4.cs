@@ -41,12 +41,12 @@ namespace MoneyMountain
         private void DisplayQuestion()
         {
             questionList = new List<string> {
-                "Which country consumes the most chocolate per capita?"
+                "Which planet is closest to the sun?"
             };
 
             answerList = new List<string[]>
             {
-                new string[] { "A: Russia", "B: Germany", "C: Switzerland", "D: Netherlands" }
+                new string[] { "A: Mars", "B: Saturn", "C: Mercury", "D: Jupiter" }
             };
 
             questionLabel.Text = questionList[questionIndex];
@@ -63,7 +63,6 @@ namespace MoneyMountain
             time = 45; //Initializing the timer to 45 seconds
             gameOver = false; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
-            questionTimer.Start(); //Start the timer
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
@@ -79,6 +78,12 @@ namespace MoneyMountain
 
             questionIndex = 0;
             DisplayQuestion();
+        }
+
+        private void buttonStartTimer_Click(object sender, EventArgs e)
+        {
+            questionTimer.Start(); //Start the timer
+            buttonStartTimer.Enabled = false;
         }
 
         private void CheckAnswer()
@@ -327,7 +332,7 @@ namespace MoneyMountain
             
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Hide();
+                Close();
                 questionForm5.Show();
             }
 
