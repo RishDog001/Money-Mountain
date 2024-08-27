@@ -11,7 +11,10 @@ namespace MoneyMountain
         private int time; //Time in seconds
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
-        private bool gameOver; //To determine if the game has ended or not
+        private string correctAnswer; //Variable to store the correct answer in
+        private bool isDoubleDipActive = false; //2 boolean variables to control the double dip lifeline
+        private bool isFirstGuess = true;
+        private bool isGameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
@@ -22,17 +25,30 @@ namespace MoneyMountain
             DisplayQuestion();
         }
 
+        private void QuestionForm4_Load(object sender, EventArgs e)
+        {
+            if (LifelineManager.Lifeline1Used)
+            {
+                LifelineManager.UseLifeline(1);
+            }
+
+            if (LifelineManager.Lifeline2Used)
+            {
+                LifelineManager.UseLifeline(2);
+            }
+        }
+
         private void questionTimer_Tick(object sender, EventArgs e)
         {
             time--; //Counting down by 1 second
-            timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
+            timerLabel.Text = $"Time Remaining: {time}"; //Label that displays the timer counting down
 
             if (time == 0)
             {
                 questionTimer.Stop();
                 earnings = 0;
                 MessageBox.Show($"Game Over! You have been disqualified for failing to answer the question within the time limit! \nYour Prize Money: {earnings}", "Time Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                gameOver = true;
+                isGameOver = true;
                 Dispose();
                 Application.Exit();
             }
@@ -49,6 +65,8 @@ namespace MoneyMountain
                 new string[] { "A: Mars", "B: Saturn", "C: Mercury", "D: Jupiter" }
             };
 
+            correctAnswer = "C: Mercury";
+
             questionLabel.Text = questionList[questionIndex];
             radioButtonOption1.Text = answerList[questionIndex][0];
             radioButtonOption2.Text = answerList[questionIndex][1];
@@ -61,7 +79,8 @@ namespace MoneyMountain
             earnings = 300; //Carry over value from previous question
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
-            gameOver = false; //Default initial value
+            isGameOver = false; //Default initial value
+            questionTimer.Tick -= questionTimer_Tick;
             questionTimer.Tick += questionTimer_Tick;
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
@@ -100,14 +119,14 @@ namespace MoneyMountain
             else
             {
                 earnings = 0;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption3.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Incorrect! The Correct answer is {correctAnswer}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }
 
         private void EndGame()
         {
-            gameOver = true;
+            isGameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Dispose();
             Application.Exit();
@@ -150,26 +169,128 @@ namespace MoneyMountain
             }
         }
 
-        private void FiftyFifty()
+        private void DoubleDip()
         {
-            radioButtonOption1.Enabled = false;
-            radioButtonOption4.Enabled = false;
+            isDoubleDipActive = true;
+            buttonQuit.Enabled = false;
+            MessageBox.Show("Double Dip lifeline activated! You have two chances to guess the correct answer.", "Double Dip", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void buttonConfirm_Click(object sender, EventArgs e)
+        private void CheckDoubleDipAnswer()
         {
-            if (MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (!isDoubleDipActive)
             {
-                questionTimer.Stop();
-                groupBoxOptions.Enabled = false;
-                groupBoxLifelines.Enabled = false;
-                buttonQuit.Enabled = false;
                 CheckAnswer();
+                return;
+            }
+
+            if (isFirstGuess)
+            {
+                isFirstGuess = false;
+                if (IsAnswerCorrect())
+                {
+                    earnings += 200;
+                    MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetDoubleDip();
+                }
+
+                else
+                {
+                    MessageBox.Show($"Incorrect! You have 1 more guess remaining.", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    questionTimer.Start();
+                    ResetOptions();
+                }
             }
 
             else
             {
-                return;
+                if (IsAnswerCorrect())
+                {
+                    earnings += 200;
+                    MessageBox.Show($"Correct! You've won ${earnings}", "Correct Answer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetDoubleDip();
+                }
+
+                else
+                {
+                    earnings = 0;
+                    MessageBox.Show($"Incorrect! The Correct answer is {correctAnswer}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    EndGame();
+                }
+            }
+        }
+
+        private bool IsAnswerCorrect() //Method to support the double dip lifeline
+        {
+            RadioButton selectedRadioButton = null;
+
+            if (radioButtonOption1.Checked)
+            {
+                selectedRadioButton = radioButtonOption1;
+            }
+
+            else if (radioButtonOption2.Checked)
+            {
+                selectedRadioButton = radioButtonOption2;
+            }
+
+            else if (radioButtonOption3.Checked)
+            {
+                selectedRadioButton = radioButtonOption3;
+            }
+
+            else if (radioButtonOption4.Checked)
+            {
+                selectedRadioButton = radioButtonOption4;
+            }
+
+            if (selectedRadioButton != null && selectedRadioButton.Text == correctAnswer)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ResetDoubleDip()
+        {
+            isDoubleDipActive = false;
+            buttonConfirm.Visible = false;
+            buttonQuit.Visible = false;
+            buttonNext.Visible = true;
+            ResetOptions();
+        }
+
+        private void ResetOptions()
+        {
+            radioButtonOption1.Checked = false;
+            radioButtonOption2.Checked = false;
+            radioButtonOption3.Checked = false;
+            radioButtonOption4.Checked = false;
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            if (!isDoubleDipActive)
+            {
+                if (MessageBox.Show("Are you sure you want to lock in your answer?", "Confirm Answer", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    questionTimer.Stop();
+                    groupBoxOptions.Enabled = false;
+                    groupBoxLifelines.Enabled = false;
+                    buttonQuit.Enabled = false;
+                    CheckAnswer();
+                }
+
+                else
+                {
+                    return;
+                }
+            }
+
+            else
+            {
+                CheckDoubleDipAnswer();
             }
         }
 
@@ -193,7 +314,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -208,6 +329,7 @@ namespace MoneyMountain
                         //Display the choices in the listbox
                         DisplayChoices(choices);
 
+                        LifelineManager.UseLifeline(1);
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
                         buttonQuit.Enabled = true;
@@ -224,7 +346,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -238,7 +360,8 @@ namespace MoneyMountain
 
                         //Display the choices in the listbox
                         DisplayChoices(choices);
-
+                        
+                        LifelineManager.UseLifeline(1);
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
                         buttonQuit.Enabled = true;
@@ -258,7 +381,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -267,10 +390,9 @@ namespace MoneyMountain
                     {
                         questionTimer.Stop();
                         listBoxResults.Items.Clear();
-                        FiftyFifty();
+                        DoubleDip();
                         buttonLifeline2.Enabled = false;
-                        questionTimer.Start();
-                        buttonQuit.Enabled = true;
+                        LifelineManager.UseLifeline(2); //Disables the lifeline buttons in each form as they get used up
                     }
                 }
 
@@ -282,9 +404,9 @@ namespace MoneyMountain
 
             else
             {
-                if (MessageBox.Show("Are you sure you want to activate the 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to activate the Double Dip lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -292,10 +414,9 @@ namespace MoneyMountain
                     else
                     {
                         questionTimer.Stop();
-                        FiftyFifty();
+                        DoubleDip();
                         buttonLifeline2.Enabled = false;
-                        questionTimer.Start();
-                        buttonQuit.Enabled = true;
+                        LifelineManager.UseLifeline(2); //Disables the lifeline buttons in each form as they get used up
                     }
                 }
 

@@ -13,11 +13,9 @@ namespace MoneyMountain
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
         private string correctAnswer; //Variable to store the correct answer in
-        private bool gameOver; //To determine if the game has ended or not
-
+        private bool isGameOver; //To determine if the game has ended or not
         private bool isDoubleDipActive = false; //2 boolean variables to control the double dip lifeline
         private bool isFirstGuess = true;
-
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
@@ -26,7 +24,6 @@ namespace MoneyMountain
             InitializeComponent();
             InitializeGame(); //User-defined method to initailize the game settings
             DisplayQuestion(); //User-defined method to display the question and answers
-            timerLabel.Text = string.Empty;
         }
 
         private void QuestionForm2_Load(object sender, EventArgs e)
@@ -45,14 +42,14 @@ namespace MoneyMountain
         private void questionTimer_Tick(object sender, EventArgs e)
         {
             time--; //Counting down by 1 second
-            timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
+            timerLabel.Text = $"Time Remaining: {time}"; //Label that displays the timer counting down
 
             if (time == 0)
             {
                 questionTimer.Stop();
                 earnings = 0;
                 MessageBox.Show($"Game Over! You have been disqualified for failing to answer the question within the time limit! \nYour Prize Money: {earnings}", "Time Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                gameOver = true;
+                isGameOver = true;
                 Dispose();
                 Application.Exit();
             }
@@ -89,7 +86,8 @@ namespace MoneyMountain
             earnings = 100; //Carry over value from previous question
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 45; //Initializing the timer to 45 seconds
-            gameOver = false; //Default initial value
+            isGameOver = false; //Default initial value
+            questionTimer.Tick -= questionTimer_Tick;
             questionTimer.Tick += questionTimer_Tick;
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
@@ -122,14 +120,14 @@ namespace MoneyMountain
             else
             {
                 earnings = 0;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption4.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Incorrect! The Correct answer is {correctAnswer}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }
 
         private void EndGame()
         {
-            gameOver = true;
+            isGameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: {earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Dispose();
             Application.Exit();
@@ -165,7 +163,6 @@ namespace MoneyMountain
         {
             isDoubleDipActive = true;
             buttonQuit.Enabled = false;
-
             MessageBox.Show("Double Dip lifeline activated! You have two chances to guess the correct answer.", "Double Dip", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -190,6 +187,7 @@ namespace MoneyMountain
                 else
                 {
                     MessageBox.Show($"Incorrect! You have 1 more guess remaining.", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    questionTimer.Start();
                     ResetOptions();
                 }
             }
@@ -205,7 +203,8 @@ namespace MoneyMountain
 
                 else
                 {
-                    MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption1.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    earnings = 0;
+                    MessageBox.Show($"Incorrect! The Correct answer is {correctAnswer}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     EndGame();
                 }
             }
@@ -325,6 +324,7 @@ namespace MoneyMountain
 
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                ResetDoubleDip();
                 Close();
                 questionForm3.Show();
             }
@@ -341,7 +341,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -356,6 +356,7 @@ namespace MoneyMountain
                         //Display the choices in the listbox
                         DisplayChoices(choices);
 
+                        LifelineManager.UseLifeline(1); //Disables the lifeline buttons in each form as they get used up
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
                         buttonQuit.Enabled = true;
@@ -372,7 +373,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -387,6 +388,7 @@ namespace MoneyMountain
                         //Display the choices in the listbox
                         DisplayChoices(choices);
 
+                        LifelineManager.UseLifeline(1); //Disables the lifeline buttons in each form as they get used up
                         buttonLifeline1.Enabled = false;
                         questionTimer.Start();
                         buttonQuit.Enabled = true;
@@ -407,7 +409,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -430,9 +432,9 @@ namespace MoneyMountain
 
             else
             {
-                if (MessageBox.Show("Are you sure you want to activate the 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to activate the Double Dip lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }

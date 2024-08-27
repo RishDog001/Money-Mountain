@@ -73,9 +73,9 @@
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
             this.timerLabel.Location = new System.Drawing.Point(549, 27);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(53, 20);
+            this.timerLabel.Size = new System.Drawing.Size(158, 20);
             this.timerLabel.TabIndex = 1;
-            this.timerLabel.Text = "label2";
+            this.timerLabel.Text = "Time Remaining: 45";
             // 
             // groupBoxOptions
             // 
@@ -144,9 +144,9 @@
             // 
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
-            this.groupBoxLifelines.Location = new System.Drawing.Point(547, 89);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(547, 99);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
-            this.groupBoxLifelines.Size = new System.Drawing.Size(241, 106);
+            this.groupBoxLifelines.Size = new System.Drawing.Size(241, 96);
             this.groupBoxLifelines.TabIndex = 3;
             this.groupBoxLifelines.TabStop = false;
             this.groupBoxLifelines.Text = "Lifelines";
@@ -154,18 +154,18 @@
             // buttonLifeline2
             // 
             this.buttonLifeline2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline2.Location = new System.Drawing.Point(134, 50);
+            this.buttonLifeline2.Location = new System.Drawing.Point(134, 39);
             this.buttonLifeline2.Name = "buttonLifeline2";
-            this.buttonLifeline2.Size = new System.Drawing.Size(89, 32);
+            this.buttonLifeline2.Size = new System.Drawing.Size(98, 32);
             this.buttonLifeline2.TabIndex = 1;
-            this.buttonLifeline2.Text = "50/50";
+            this.buttonLifeline2.Text = "Double Dip";
             this.buttonLifeline2.UseVisualStyleBackColor = true;
             this.buttonLifeline2.Click += new System.EventHandler(this.buttonLifeline2_Click);
             // 
             // buttonLifeline1
             // 
             this.buttonLifeline1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline1.Location = new System.Drawing.Point(7, 50);
+            this.buttonLifeline1.Location = new System.Drawing.Point(6, 39);
             this.buttonLifeline1.Name = "buttonLifeline1";
             this.buttonLifeline1.Size = new System.Drawing.Size(105, 32);
             this.buttonLifeline1.TabIndex = 0;
@@ -242,6 +242,7 @@
             this.Controls.Add(this.questionLabel);
             this.Name = "QuestionForm5";
             this.Text = "Question 5 - Worth $1000";
+            this.Load += new System.EventHandler(this.QuestionForm5_Load);
             this.groupBoxOptions.ResumeLayout(false);
             this.groupBoxOptions.PerformLayout();
             this.groupBoxLifelines.ResumeLayout(false);

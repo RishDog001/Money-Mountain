@@ -11,7 +11,7 @@ namespace MoneyMountain
         public static bool Lifeline1Used { get; set; } = false;
         public static bool Lifeline2Used { get; set; } = false;
 
-        public static void UseLifeline(int lifelineNumber)
+        public static void UseLifeline(int lifelineNumber) //Method to disable the lifeline buttons in each form as they get used up
         {
             switch (lifelineNumber)
             {

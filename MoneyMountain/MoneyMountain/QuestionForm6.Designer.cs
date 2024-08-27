@@ -45,6 +45,7 @@
             this.radioButtonOption2 = new System.Windows.Forms.RadioButton();
             this.radioButtonOption1 = new System.Windows.Forms.RadioButton();
             this.questionTimer = new System.Windows.Forms.Timer(this.components);
+            this.buttonStartTimer = new System.Windows.Forms.Button();
             this.groupBoxLifelines.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBoxOptions.SuspendLayout();
@@ -58,9 +59,9 @@
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
             this.timerLabel.Location = new System.Drawing.Point(536, 24);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(53, 20);
+            this.timerLabel.Size = new System.Drawing.Size(158, 20);
             this.timerLabel.TabIndex = 3;
-            this.timerLabel.Text = "label2";
+            this.timerLabel.Text = "Time Remaining: 60";
             // 
             // questionLabel
             // 
@@ -101,7 +102,7 @@
             this.buttonLifeline2.Name = "buttonLifeline2";
             this.buttonLifeline2.Size = new System.Drawing.Size(89, 32);
             this.buttonLifeline2.TabIndex = 1;
-            this.buttonLifeline2.Text = "50/50";
+            this.buttonLifeline2.Text = "Double Dip";
             this.buttonLifeline2.UseVisualStyleBackColor = true;
             this.buttonLifeline2.Click += new System.EventHandler(this.buttonLifeline2_Click);
             // 
@@ -119,9 +120,9 @@
             // buttonNext
             // 
             this.buttonNext.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonNext.Location = new System.Drawing.Point(498, 400);
+            this.buttonNext.Location = new System.Drawing.Point(533, 382);
             this.buttonNext.Name = "buttonNext";
-            this.buttonNext.Size = new System.Drawing.Size(124, 32);
+            this.buttonNext.Size = new System.Drawing.Size(107, 27);
             this.buttonNext.TabIndex = 10;
             this.buttonNext.Text = "Next Question";
             this.buttonNext.UseVisualStyleBackColor = true;
@@ -130,9 +131,9 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(563, 349);
+            this.buttonQuit.Location = new System.Drawing.Point(646, 338);
             this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(95, 36);
+            this.buttonQuit.Size = new System.Drawing.Size(99, 27);
             this.buttonQuit.TabIndex = 9;
             this.buttonQuit.Text = "Quit Game";
             this.buttonQuit.UseVisualStyleBackColor = true;
@@ -141,9 +142,9 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(450, 349);
+            this.buttonConfirm.Location = new System.Drawing.Point(533, 338);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(107, 36);
+            this.buttonConfirm.Size = new System.Drawing.Size(107, 27);
             this.buttonConfirm.TabIndex = 8;
             this.buttonConfirm.Text = "Lock Answer";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -229,11 +230,23 @@
             this.questionTimer.Interval = 1000;
             this.questionTimer.Tick += new System.EventHandler(this.questionTimer_Tick);
             // 
+            // buttonStartTimer
+            // 
+            this.buttonStartTimer.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonStartTimer.Location = new System.Drawing.Point(646, 382);
+            this.buttonStartTimer.Name = "buttonStartTimer";
+            this.buttonStartTimer.Size = new System.Drawing.Size(99, 27);
+            this.buttonStartTimer.TabIndex = 13;
+            this.buttonStartTimer.Text = "Start Timer";
+            this.buttonStartTimer.UseVisualStyleBackColor = true;
+            this.buttonStartTimer.Click += new System.EventHandler(this.buttonStartTimer_Click);
+            // 
             // QuestionForm6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonStartTimer);
             this.Controls.Add(this.groupBoxOptions);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonNext);
@@ -245,6 +258,7 @@
             this.Controls.Add(this.questionLabel);
             this.Name = "QuestionForm6";
             this.Text = "Question 6 - Worth $2000";
+            this.Load += new System.EventHandler(this.QuestionForm6_Load);
             this.groupBoxLifelines.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBoxOptions.ResumeLayout(false);
@@ -272,5 +286,6 @@
         private System.Windows.Forms.RadioButton radioButtonOption2;
         private System.Windows.Forms.RadioButton radioButtonOption1;
         private System.Windows.Forms.Timer questionTimer;
+        private System.Windows.Forms.Button buttonStartTimer;
     }
 }

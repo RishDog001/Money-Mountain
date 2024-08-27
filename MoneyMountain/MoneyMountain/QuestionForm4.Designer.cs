@@ -73,9 +73,9 @@
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
             this.timerLabel.Location = new System.Drawing.Point(526, 30);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(53, 20);
+            this.timerLabel.Size = new System.Drawing.Size(158, 20);
             this.timerLabel.TabIndex = 1;
-            this.timerLabel.Text = "label1";
+            this.timerLabel.Text = "Time Remaining: 45";
             // 
             // groupBoxLifelines
             // 
@@ -92,11 +92,11 @@
             // buttonLifeline2
             // 
             this.buttonLifeline2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline2.Location = new System.Drawing.Point(165, 21);
+            this.buttonLifeline2.Location = new System.Drawing.Point(157, 21);
             this.buttonLifeline2.Name = "buttonLifeline2";
-            this.buttonLifeline2.Size = new System.Drawing.Size(93, 34);
+            this.buttonLifeline2.Size = new System.Drawing.Size(101, 34);
             this.buttonLifeline2.TabIndex = 1;
-            this.buttonLifeline2.Text = "50/50";
+            this.buttonLifeline2.Text = "Double Dip";
             this.buttonLifeline2.UseVisualStyleBackColor = true;
             this.buttonLifeline2.Click += new System.EventHandler(this.buttonLifeline2_Click);
             // 
@@ -246,6 +246,7 @@
             this.Controls.Add(this.questionLabel);
             this.Name = "QuestionForm4";
             this.Text = "Question 4 - Worth $500";
+            this.Load += new System.EventHandler(this.QuestionForm4_Load);
             this.groupBoxLifelines.ResumeLayout(false);
             this.groupBoxOptions.ResumeLayout(false);
             this.groupBoxOptions.PerformLayout();

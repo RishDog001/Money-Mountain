@@ -211,9 +211,9 @@
             this.timerLabel.ForeColor = System.Drawing.Color.Red;
             this.timerLabel.Location = new System.Drawing.Point(545, 19);
             this.timerLabel.Name = "timerLabel";
-            this.timerLabel.Size = new System.Drawing.Size(53, 20);
+            this.timerLabel.Size = new System.Drawing.Size(158, 20);
             this.timerLabel.TabIndex = 19;
-            this.timerLabel.Text = "label1";
+            this.timerLabel.Text = "Time Remaining: 45";
             // 
             // questionLabel
             // 

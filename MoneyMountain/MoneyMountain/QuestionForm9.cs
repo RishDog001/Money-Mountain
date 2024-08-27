@@ -15,7 +15,7 @@ namespace MoneyMountain
         private int time; //Time in seconds
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
-        private bool gameOver; //To determine if the game has ended or not
+        private bool isGameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
@@ -29,14 +29,14 @@ namespace MoneyMountain
         private void questionTimer_Tick(object sender, EventArgs e)
         {
             time--; //Counting down by 1 second
-            timerLabel.Text = $"Time remaining: {time}"; //Label that displays the timer counting down
+            timerLabel.Text = $"Time Remaining: {time}"; //Label that displays the timer counting down
 
             if (time == 0)
             {
                 questionTimer.Stop();
                 earnings = 0;
                 MessageBox.Show($"Game Over! You have been disqualified for failing to answer the question within the time limit! \nYour Prize Money: {earnings}", "Time Expired", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                gameOver = true;
+                isGameOver = true;
                 Dispose();
                 Application.Exit();
             }
@@ -66,7 +66,7 @@ namespace MoneyMountain
             pictureBox1.Image = Properties.Resources.lightbulb; //Loading the image onto the picturebox from the resources
             questionTimer.Interval = 1000; //Time interval in milliseconds
             time = 60; //Initializing the timer to 60 seconds
-            gameOver = false; //Default initial value
+            isGameOver = false; //Default initial value
             questionTimer.Tick += questionTimer_Tick;
             questionTimer.Start(); //Start the timer
 
@@ -108,7 +108,7 @@ namespace MoneyMountain
         private void EndGame()
         {
             LoginForm loginForm = new LoginForm();
-            gameOver = true;
+            isGameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Close();
             loginForm.Show();
@@ -194,7 +194,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -225,7 +225,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate the audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -259,7 +259,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -285,7 +285,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate the 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }

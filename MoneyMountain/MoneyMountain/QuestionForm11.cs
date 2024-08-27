@@ -8,7 +8,7 @@ namespace MoneyMountain
     {
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
-        private bool gameOver; //To determine if the game has ended or not
+        private bool isGameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
 
@@ -40,7 +40,7 @@ namespace MoneyMountain
         private void InitializeGame()
         {
             earnings = 32000; //Carry over value from previous question
-            gameOver = false; //Default initial value
+            isGameOver = false; //Default initial value
 
             buttonConfirm.Enabled = false; //Disabling the confirm and quit buttons at runtime
             buttonQuit.Enabled = false;
@@ -80,7 +80,7 @@ namespace MoneyMountain
 
         private void EndGame()
         {
-            gameOver = true;
+            isGameOver = true;
             MessageBox.Show($"Game over! Your Prize Money: ${earnings}.\nThank you for playing Money Mountain!", "Game Over", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Application.Exit();
         }
@@ -149,7 +149,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -176,7 +176,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your audience poll lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -206,7 +206,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your last lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
@@ -229,7 +229,7 @@ namespace MoneyMountain
             {
                 if (MessageBox.Show("Are you sure you want to activate your 50/50 lifeline?", "Activate Lifeline", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (gameOver)
+                    if (isGameOver)
                     {
                         return;
                     }
