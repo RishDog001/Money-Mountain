@@ -191,7 +191,6 @@ namespace MoneyMountain
 
                 else
                 {
-                    earnings /= 8;
                     MessageBox.Show($"Incorrect! You have 1 more guess remaining.", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     questionTimer.Start();
                     ResetOptions();
