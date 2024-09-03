@@ -33,12 +33,12 @@ namespace MoneyMountain
         {
             if (LifelineManager.Lifeline1Used)
             {
-                LifelineManager.UseLifeline(1);
+                buttonLifeline1.Enabled = false;
             }
 
             if (LifelineManager.Lifeline2Used)
             {
-                LifelineManager.UseLifeline(2);
+                buttonLifeline1.Enabled = false;
             }
         }
 
@@ -423,6 +423,7 @@ namespace MoneyMountain
             
             if (MessageBox.Show("Ready to move onto the next question?", "Next Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                ResetDoubleDip();
                 Close();
                 questionForm8.Show();
             }

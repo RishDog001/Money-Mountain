@@ -51,11 +51,9 @@
             this.groupBoxOptions.Controls.Add(this.radioButtonOption2);
             this.groupBoxOptions.Controls.Add(this.radioButtonOption1);
             this.groupBoxOptions.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxOptions.Location = new System.Drawing.Point(18, 186);
-            this.groupBoxOptions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBoxOptions.Location = new System.Drawing.Point(16, 149);
             this.groupBoxOptions.Name = "groupBoxOptions";
-            this.groupBoxOptions.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxOptions.Size = new System.Drawing.Size(382, 208);
+            this.groupBoxOptions.Size = new System.Drawing.Size(340, 166);
             this.groupBoxOptions.TabIndex = 39;
             this.groupBoxOptions.TabStop = false;
             this.groupBoxOptions.Text = "Options";
@@ -64,10 +62,9 @@
             // 
             this.radioButtonOption4.AutoSize = true;
             this.radioButtonOption4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.radioButtonOption4.Location = new System.Drawing.Point(230, 151);
-            this.radioButtonOption4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButtonOption4.Location = new System.Drawing.Point(204, 121);
             this.radioButtonOption4.Name = "radioButtonOption4";
-            this.radioButtonOption4.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption4.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption4.TabIndex = 3;
             this.radioButtonOption4.TabStop = true;
             this.radioButtonOption4.Text = "radioButton1";
@@ -78,10 +75,9 @@
             // 
             this.radioButtonOption3.AutoSize = true;
             this.radioButtonOption3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.radioButtonOption3.Location = new System.Drawing.Point(7, 151);
-            this.radioButtonOption3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButtonOption3.Location = new System.Drawing.Point(6, 121);
             this.radioButtonOption3.Name = "radioButtonOption3";
-            this.radioButtonOption3.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption3.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption3.TabIndex = 2;
             this.radioButtonOption3.TabStop = true;
             this.radioButtonOption3.Text = "radioButton1";
@@ -92,10 +88,9 @@
             // 
             this.radioButtonOption2.AutoSize = true;
             this.radioButtonOption2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.radioButtonOption2.Location = new System.Drawing.Point(230, 49);
-            this.radioButtonOption2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButtonOption2.Location = new System.Drawing.Point(204, 39);
             this.radioButtonOption2.Name = "radioButtonOption2";
-            this.radioButtonOption2.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption2.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption2.TabIndex = 1;
             this.radioButtonOption2.TabStop = true;
             this.radioButtonOption2.Text = "radioButton1";
@@ -107,10 +102,9 @@
             this.radioButtonOption1.AutoCheck = false;
             this.radioButtonOption1.AutoSize = true;
             this.radioButtonOption1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.radioButtonOption1.Location = new System.Drawing.Point(8, 49);
-            this.radioButtonOption1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButtonOption1.Location = new System.Drawing.Point(7, 39);
             this.radioButtonOption1.Name = "radioButtonOption1";
-            this.radioButtonOption1.Size = new System.Drawing.Size(131, 25);
+            this.radioButtonOption1.Size = new System.Drawing.Size(112, 21);
             this.radioButtonOption1.TabIndex = 0;
             this.radioButtonOption1.TabStop = true;
             this.radioButtonOption1.Text = "radioButton1";
@@ -122,7 +116,7 @@
             this.questionLabel.AutoSize = true;
             this.questionLabel.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.questionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.questionLabel.Location = new System.Drawing.Point(14, 11);
+            this.questionLabel.Location = new System.Drawing.Point(12, 9);
             this.questionLabel.Name = "questionLabel";
             this.questionLabel.Size = new System.Drawing.Size(53, 20);
             this.questionLabel.TabIndex = 38;
@@ -131,10 +125,9 @@
             // buttonQuit
             // 
             this.buttonQuit.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonQuit.Location = new System.Drawing.Point(630, 337);
-            this.buttonQuit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonQuit.Location = new System.Drawing.Point(560, 270);
             this.buttonQuit.Name = "buttonQuit";
-            this.buttonQuit.Size = new System.Drawing.Size(107, 45);
+            this.buttonQuit.Size = new System.Drawing.Size(95, 36);
             this.buttonQuit.TabIndex = 46;
             this.buttonQuit.Text = "Quit Game";
             this.buttonQuit.UseVisualStyleBackColor = true;
@@ -143,10 +136,9 @@
             // buttonConfirm
             // 
             this.buttonConfirm.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonConfirm.Location = new System.Drawing.Point(487, 337);
-            this.buttonConfirm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonConfirm.Location = new System.Drawing.Point(433, 270);
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(120, 45);
+            this.buttonConfirm.Size = new System.Drawing.Size(107, 36);
             this.buttonConfirm.TabIndex = 45;
             this.buttonConfirm.Text = "Lock Answer";
             this.buttonConfirm.UseVisualStyleBackColor = true;
@@ -157,11 +149,9 @@
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline2);
             this.groupBoxLifelines.Controls.Add(this.buttonLifeline1);
             this.groupBoxLifelines.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBoxLifelines.Location = new System.Drawing.Point(487, 13);
-            this.groupBoxLifelines.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBoxLifelines.Location = new System.Drawing.Point(433, 10);
             this.groupBoxLifelines.Name = "groupBoxLifelines";
-            this.groupBoxLifelines.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxLifelines.Size = new System.Drawing.Size(271, 114);
+            this.groupBoxLifelines.Size = new System.Drawing.Size(241, 91);
             this.groupBoxLifelines.TabIndex = 47;
             this.groupBoxLifelines.TabStop = false;
             this.groupBoxLifelines.Text = "Lifelines";
@@ -169,21 +159,19 @@
             // buttonLifeline2
             // 
             this.buttonLifeline2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline2.Location = new System.Drawing.Point(143, 48);
-            this.buttonLifeline2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonLifeline2.Location = new System.Drawing.Point(127, 38);
             this.buttonLifeline2.Name = "buttonLifeline2";
-            this.buttonLifeline2.Size = new System.Drawing.Size(100, 40);
+            this.buttonLifeline2.Size = new System.Drawing.Size(89, 32);
             this.buttonLifeline2.TabIndex = 1;
-            this.buttonLifeline2.Text = "50/50";
+            this.buttonLifeline2.Text = "Double Dip";
             this.buttonLifeline2.UseVisualStyleBackColor = true;
             // 
             // buttonLifeline1
             // 
             this.buttonLifeline1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.buttonLifeline1.Location = new System.Drawing.Point(7, 48);
-            this.buttonLifeline1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonLifeline1.Location = new System.Drawing.Point(6, 38);
             this.buttonLifeline1.Name = "buttonLifeline1";
-            this.buttonLifeline1.Size = new System.Drawing.Size(118, 40);
+            this.buttonLifeline1.Size = new System.Drawing.Size(105, 32);
             this.buttonLifeline1.TabIndex = 0;
             this.buttonLifeline1.Text = "Audience Poll";
             this.buttonLifeline1.UseVisualStyleBackColor = true;
@@ -191,25 +179,23 @@
             // listBoxResults
             // 
             this.listBoxResults.FormattingEnabled = true;
-            this.listBoxResults.ItemHeight = 20;
-            this.listBoxResults.Location = new System.Drawing.Point(487, 161);
-            this.listBoxResults.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBoxResults.ItemHeight = 16;
+            this.listBoxResults.Location = new System.Drawing.Point(433, 129);
             this.listBoxResults.Name = "listBoxResults";
-            this.listBoxResults.Size = new System.Drawing.Size(271, 144);
+            this.listBoxResults.Size = new System.Drawing.Size(241, 116);
             this.listBoxResults.TabIndex = 48;
             // 
             // QuestionForm16
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 416);
+            this.ClientSize = new System.Drawing.Size(684, 333);
             this.Controls.Add(this.listBoxResults);
             this.Controls.Add(this.groupBoxLifelines);
             this.Controls.Add(this.buttonQuit);
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.groupBoxOptions);
             this.Controls.Add(this.questionLabel);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "QuestionForm16";
             this.Text = "Jackpot Question - Worth $7,000,000";
             this.groupBoxOptions.ResumeLayout(false);

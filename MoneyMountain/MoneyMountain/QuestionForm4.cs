@@ -29,12 +29,12 @@ namespace MoneyMountain
         {
             if (LifelineManager.Lifeline1Used)
             {
-                LifelineManager.UseLifeline(1);
+                buttonLifeline1.Enabled = false;
             }
 
             if (LifelineManager.Lifeline2Used)
             {
-                LifelineManager.UseLifeline(2);
+                buttonLifeline2.Enabled = false;
             }
         }
 

@@ -30,12 +30,12 @@ namespace MoneyMountain
         {
             if (LifelineManager.Lifeline1Used)
             {
-                buttonLifeline1.Enabled = false;
+                LifelineManager.UseLifeline(1);
             }
 
             if (LifelineManager.Lifeline2Used)
             {
-                buttonLifeline2.Enabled = false;
+                LifelineManager.UseLifeline(2);
             }
         }
 
@@ -259,26 +259,6 @@ namespace MoneyMountain
             radioButtonOption4.Checked = false;
         }
 
-        private void radioButtonOption1_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption1.Checked;
-        }
-
-        private void radioButtonOption2_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption2.Checked;
-        }
-
-        private void radioButtonOption3_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption3.Checked;
-        }
-
-        private void radioButtonOption4_CheckedChanged_1(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption4.Checked;
-        }
-
         private void buttonConfirm_Click_1(object sender, EventArgs e)
         {
             if (!isDoubleDipActive)
@@ -305,7 +285,7 @@ namespace MoneyMountain
         }
 
         private void buttonQuit_Click_1(object sender, EventArgs e)
-        {            
+        {
             if (MessageBox.Show("Are you sure you want to quit?", "Quit Game", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 questionTimer.Stop();
@@ -454,6 +434,26 @@ namespace MoneyMountain
                 }
             }
 
+        }
+
+        private void radioButtonOption1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption1.Checked;
+        }
+
+        private void radioButtonOption2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption2.Checked;
+        }
+
+        private void radioButtonOption3_CheckedChanged_1(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption3.Checked;
+        }
+
+        private void radioButtonOption4_CheckedChanged_1(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption4.Checked;
         }
     }
 }

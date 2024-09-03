@@ -8,6 +8,7 @@ namespace MoneyMountain
     {
         private int questionIndex; //Current question index
         private int earnings; //Total prize money earned
+        private string correctAnswer; //Variable to store the correct answer in
         private bool isGameOver; //To determine if the game has ended or not
         private List<string> questionList = new List<string>(); //List of questions
         private List<string[]> answerList = new List<string[]>(); //List of answers
@@ -29,6 +30,8 @@ namespace MoneyMountain
             {
                 new string[] { "A: 50 billion", "B: 100 billion", "C: 1 trillion", "D: 5 trillion" }
             };
+
+            correctAnswer = "B: 100 billion";
 
             questionLabel.Text = questionList[questionIndex];
             radioButtonOption1.Text = answerList[questionIndex][0];
@@ -72,7 +75,7 @@ namespace MoneyMountain
             else
             {
                 earnings -= 968000;
-                MessageBox.Show($"Incorrect! The Correct answer is {radioButtonOption2.Text}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Incorrect! The Correct answer is {correctAnswer}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EndGame();
             }
         }

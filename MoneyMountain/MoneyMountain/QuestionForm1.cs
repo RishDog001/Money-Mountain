@@ -33,8 +33,8 @@ namespace MoneyMountain
             }
 
             if (LifelineManager.Lifeline2Used) 
-            { 
-                buttonLifeline2.Enabled = false; 
+            {
+                buttonLifeline2.Enabled = false;
             }
         }
 

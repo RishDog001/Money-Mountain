@@ -270,26 +270,6 @@ namespace MoneyMountain
             radioButtonOption4.Checked = false;
         }
 
-        private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption1.Checked;
-        }
-
-        private void radioButtonOption2_CheckedChanged(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption2.Checked;
-        }
-
-        private void radioButtonOption3_CheckedChanged(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption3.Checked;
-        }
-
-        private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
-        {
-            buttonConfirm.Enabled = radioButtonOption4.Checked;
-        }
-
         private void buttonLifeline1_Click(object sender, EventArgs e)
         {
             if (!buttonLifeline2.Enabled)
@@ -461,10 +441,30 @@ namespace MoneyMountain
                 questionForm4.Show();
             }
 
-            else 
-            { 
-                return; 
+            else
+            {
+                return;
             }
+        }
+
+        private void radioButtonOption1_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption1.Checked;
+        }
+
+        private void radioButtonOption2_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption2.Checked;
+        }
+
+        private void radioButtonOption3_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption3.Checked;
+        }
+
+        private void radioButtonOption4_CheckedChanged(object sender, EventArgs e)
+        {
+            buttonConfirm.Enabled = radioButtonOption4.Checked;
         }
     }
 }
