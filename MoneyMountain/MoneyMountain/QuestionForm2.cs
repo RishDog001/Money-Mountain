@@ -30,12 +30,12 @@ namespace MoneyMountain
         {
             if (LifelineManager.Lifeline1Used)
             {
-                LifelineManager.UseLifeline(1);
+                buttonLifeline1.Enabled = false;
             }
 
             if (LifelineManager.Lifeline2Used)
             {
-                LifelineManager.UseLifeline(2);
+                buttonLifeline2.Enabled = false;
             }
         }
 
@@ -59,6 +59,7 @@ namespace MoneyMountain
         {
             questionTimer.Start(); //Start the timer
             buttonStartTimer.Enabled = false;
+            groupBoxOptions.Enabled = true;
         }
 
         private void DisplayQuestion()
@@ -95,7 +96,8 @@ namespace MoneyMountain
 
             buttonNext.Visible = false; //Hiding the next question button
 
-            groupBoxLifelines.Enabled = true; //Enabling the lifeline buttons inside the groupbox at runtime
+            groupBoxLifelines.Enabled = false; //Disabling the lifeline buttons inside the groupbox at runtime until after the timer has begun
+            groupBoxOptions.Enabled = false; //Disabling the radiobuttons at runtime until after the timer has begun
 
             radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
             radioButtonOption2.Checked = false;

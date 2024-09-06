@@ -88,7 +88,8 @@ namespace MoneyMountain
 
             buttonNext.Visible = false; //Hiding the next question button
 
-            groupBoxLifelines.Enabled = true; //Enabling the lifeline buttons inside the groupbox at runtime
+            groupBoxLifelines.Enabled = false; //Disabling the lifeline buttons inside the groupbox at runtime until after the timer starts
+            groupBoxOptions.Enabled = false; //Disabling the radiobuttons at runtime until after the timer starts
 
             radioButtonOption1.Checked = false; //Unchecking the radio buttons at runtime
             radioButtonOption2.Checked = false;
@@ -103,6 +104,8 @@ namespace MoneyMountain
         {
             questionTimer.Start(); //Start the timer
             buttonStartTimer.Enabled = false;
+            groupBoxOptions.Enabled = true; //Enabling the radiobuttons when the timer starts
+            groupBoxLifelines.Enabled = true; //Enabling the lifeline buttons when the timer starts
         }
 
         private void CheckAnswer()
@@ -204,7 +207,6 @@ namespace MoneyMountain
 
                 else
                 {
-                    earnings = 0;
                     MessageBox.Show($"Incorrect! The Correct answer is {correctAnswer}", "Wrong Answer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     EndGame();
                 }
